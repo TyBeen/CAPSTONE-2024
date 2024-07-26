@@ -13,7 +13,7 @@ export default function Library () {
             textAlign: "center",
             fontSize: "60px"
         }}>Capstone Presentation Video Library</h1>
-        <embed src="https://drive.google.com/embeddedfolderview?id=1kka_b7__bJGDVNjCYFoUzSK0E3JIS88D#grid" style={{
+        <embed src="https://drive.google.com/embeddedfolderview?id=1l1xHtaXW6QsVvrYNuYRom5cM6CUuOtrk#grid" style={{
             width:"100%", 
             height:"600px", 
             border:"0"
@@ -28,9 +28,22 @@ export default function Library () {
             marginRight: "50px"
           }}
         >
-          <button type="click" onClick={() => navigate("/")}>
-            Back
-          </button>
+          <button
+                type="click"
+                onClick={() => navigate('/')}
+                style={{
+                    display: "flex",
+                    backgroundColor: "#ff532f",
+                    color: "black",
+                    border: "0px",
+                    borderRadius: "8px",
+                    marginLeft: "1500px",
+                    marginRight: "15px",
+                    padding: "5px"
+                }}
+                >
+                    Back
+                </button>
         </div>
         </>
     )
