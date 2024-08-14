@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
+import { useState, useEffect } from "react";
+import { jwtDecode } from "jwt-decode";
 import Landing from "./components/main/Landing";
 import Register from "./components/header/Register";
 import Login from "./components/header/Login";
@@ -11,6 +12,31 @@ import ControlPanel from "./components/main/ControlPanel";
 import Proposal from "./components/main/Proposal";
 
 function App() {
+  const yourJwtToken = localStorage.getItem("jwtToken");
+  const decoded = jwtDecode(yourJwtToken);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    userIsLogged();
+  });
+
+  useEffect(() => {
+    userIsAdmin();
+  });
+
+  async function userIsLogged() {
+    if (decoded) {
+      setIsLoggedIn(true);
+    }
+  }
+
+  async function userIsAdmin() {
+    if (decoded.isAdmin) {
+      setIsAdmin(true);
+    }
+  }
+
   return (
     <>
       <BrowserRouter>
