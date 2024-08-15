@@ -62,7 +62,7 @@ exports.registerUser = async (req, res) => {
   } = req.body;
   let isAdmin = false;
 
-  if (email === process.env.admin) {
+  if (email === process.env.ADMIN) {
     isAdmin = true;
   }
 
