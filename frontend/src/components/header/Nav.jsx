@@ -27,7 +27,7 @@ export default function Nav() {
 
   //saves user info if they are logged in
   async function setPersistingCurrentUserObject(decoded) {
-    const response = await fetch(`http://localhost:3000/users/${decoded._id}`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
 
     const data = await response.json();
     console.log("Persistent user data:", data);

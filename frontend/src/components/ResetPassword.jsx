@@ -15,7 +15,7 @@ const ResetPassword = () => {
         throw new Error("Passwords do not match!");
       }
 
-      let response = await fetch(`http://localhost:3000/users/resetPassword`, {
+      let response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/resetPassword`, {
         method: "POST",
         body: JSON.stringify({
           token: e.target.token.value,

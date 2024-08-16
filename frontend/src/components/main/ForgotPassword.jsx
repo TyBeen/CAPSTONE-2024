@@ -10,7 +10,7 @@ const ForgotPassword = () => {
     e.preventDefault();
 
     try {
-      let response = await fetch(`http://localhost:3000/users/forgotPassword`, {
+      let response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/forgotPassword`, {
         method: "POST",
         body: JSON.stringify({
           email: e.target.email.value,

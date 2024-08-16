@@ -18,7 +18,7 @@ export default function ProposalStatus() {
 
   async function getUserProposal() {
     const response = await fetch(
-      `http://localhost:3000/proposals/displayUserProposal/${owner}`
+      `https://capstone-2024-ppe0.onrender.com/proposals/displayUserProposal/${owner}`
     );
 
     const data = await response.json();

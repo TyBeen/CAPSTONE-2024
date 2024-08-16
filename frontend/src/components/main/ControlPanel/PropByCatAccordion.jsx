@@ -22,7 +22,7 @@ export default function PropByCatAccordion({ handleProposalClick }) {
   //fetches all proposals
   async function getAllProposals() {
     const response = await fetch(
-      `http://localhost:3000/proposals/displayAllProposal`
+      `https://capstone-2024-ppe0.onrender.com/proposals/displayAllProposal`
     );
 
     const data = await response.json();

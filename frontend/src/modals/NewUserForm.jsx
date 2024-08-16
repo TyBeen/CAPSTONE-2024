@@ -44,7 +44,7 @@ export default function NewUserForm() {
       state: usState,
     };
 
-    const response = await fetch(`http://localhost:3000/users/register`, {
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/register`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -82,7 +82,7 @@ export default function NewUserForm() {
     console.log("username", username);
 
     const response = await fetch(
-      `http://localhost:3000/users/check/${username}`
+      `https://capstone-2024-ppe0.onrender.com/users/check/${username}`
     );
 
     const data = await response.json();

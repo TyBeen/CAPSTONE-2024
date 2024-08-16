@@ -29,7 +29,7 @@ export default function NewProposalForm() {
   }, []);
 
   async function setPersistingCurrentUserObject() {
-    const response = await fetch(`http://localhost:3000/users/${decoded._id}`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
 
     const data = await response.json();
     console.log("Persistent user data:", data);
@@ -121,7 +121,7 @@ export default function NewProposalForm() {
     };
 
     const response = await fetch(
-      `http://localhost:3000/proposals/createProposal`,
+      `https://capstone-2024-ppe0.onrender.com/proposals/createProposal`,
       {
         method: "POST",
         body: JSON.stringify(proposalData),
@@ -172,7 +172,7 @@ export default function NewProposalForm() {
       updated: false
     };
 
-    const response = await fetch(`http://localhost:3000/proposals/send`, {
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/proposals/send`, {
       method: "POST",
       body: JSON.stringify(proposalData),
       headers: {

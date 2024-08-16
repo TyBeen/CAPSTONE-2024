@@ -120,7 +120,7 @@ exports.forgotPassword = async (req, res) => {
       subject: "ResetPassword",
       html: `<h1>Reset Your Password</h1>
       <p>Click on the following link to reset your password:<p>
-      <a href="http://localhost:5173/resetPassword/?token=${token}">http://locakhost:5173/resetPassword/?token=${token}</a>
+      <a href="https://capstone-2024-ppe0.onrender.com/resetPassword/?token=${token}">https://capstone-2024-ppe0.onrender.com/resetPassword/?token=${token}</a>
       <p>The link will expire in 10 minutes.<p>
       <p>If you didn't request a password reset, please nofity an addministator.<p>`,
     };
