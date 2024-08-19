@@ -28,6 +28,7 @@ export default function Login() {
     localStorage.setItem("jwtToken", userData.token);
     localStorage.setItem("loggedIn", userData.loggedIn);
     localStorage.setItem("userInfo", userData.user._id);
+    localStorage.setItem("isAdmin", userData.user.isAdmin);
 
     //error handling
     if (response.status === 204) {

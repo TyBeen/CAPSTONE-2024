@@ -11,6 +11,8 @@ export default function Logout({isLoggedIn, setIsLoggedIn}) {
 
     localStorage.removeItem("jwtToken");
     localStorage.removeItem("loggedIn");
+    localStorage.removeItem("userInfo");
+    localStorage.removeItem("isAdmin");
 
     navigate("/login");
   }
@@ -20,7 +22,7 @@ export default function Logout({isLoggedIn, setIsLoggedIn}) {
     style={{
       display: "inline-flex",
       backgroundColor: "#ff532f",
-      color: "black"
+      color: "white"
     }}
       type="click"
       onClick={(e) => {

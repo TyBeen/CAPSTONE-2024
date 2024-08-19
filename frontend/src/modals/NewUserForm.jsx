@@ -374,7 +374,7 @@ export default function NewUserForm() {
                   style={{
                     display: "inline-flex",
                     backgroundColor: "#ff532f",
-                    color: "black",
+                    color: "white",
                   }}
                   className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
                 >

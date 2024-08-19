@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Button } from "flowbite-react";
 import Nav from "../header/Nav";
 
 export default function About() {
@@ -24,32 +25,32 @@ export default function About() {
           </h4>
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               flexDirection: "row",
-              backgroundColor: "#1a9988",
-              fontSize: "15px",
+              fontSize: "15px"
             }}
           >
             <div
               style={{
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "3vh",
                 marginRight: "10px",
-                justifyContent: "center",
-                alignContent: "center",
                 border: "1px solid black",
+                backgroundColor: "#1a9988",
                 padding: "20px"
               }}
             >
               <div
                 style={{
-                  marginLeft: "45px",
+                  display: "inline-flex",
                   justifyContent: "center",
-                  alignContent: "center",
-                  padding: "20px",
+                  paddingTop: "10px"
                 }}
               >
                 <img src="https://loremflickr.com/320/240/dog"></img>
               </div>
-              <p>
+              <p style={{fontSize: "2em"}}>
                 <b>Player One Bio</b>
               </p>
               <p>
@@ -66,35 +67,28 @@ export default function About() {
                 consequat consequat erat, non volutpat nisi vehicula sit.
               </p>
             </div>
+
             <div
               style={{
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "3vh",
                 marginRight: "10px",
-                justifyContent: "center",
-                alignContent: "center",
                 border: "1px solid black",
-                padding: "20px",
+                backgroundColor: "#1a9988",
+                padding: "20px"
               }}
             >
-              <div
+                <div
                 style={{
-                  marginLeft: "45px",
+                  display: "inline-flex",
                   justifyContent: "center",
-                  alignContent: "center",
-                  padding: "20px",
+                  paddingTop: "10px"
                 }}
               >
-                <div
-                  style={{
-                    marginLeft: "45px",
-                    justifyContent: "center",
-                    alignContent: "center",
-                    padding: "20px",
-                  }}
-                >
                   <img src="https://loremflickr.com/g/320/240/paris"></img>
                 </div>
-              </div>
-              <p>
+              <p style={{fontSize: "2em"}}>
                 <b>Player Two Bio</b>
               </p>
               <p>
@@ -111,25 +105,28 @@ export default function About() {
                 consequat consequat erat, non volutpat nisi vehicula sit.
               </p>
             </div>
+
             <div
               style={{
-                justifyContent: "center",
-                alignContent: "center",
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "3vh",
+                marginRight: "10px",
                 border: "1px solid black",
-                padding: "20px",
+                backgroundColor: "#1a9988",
+                padding: "20px"
               }}
             >
               <div
                 style={{
-                  marginLeft: "45px",
+                  display: "inline-flex",
                   justifyContent: "center",
-                  alignContent: "center",
-                  padding: "20px",
+                  paddingTop: "10px"
                 }}
               >
                 <img src="https://loremflickr.com/320/240/dog"></img>
               </div>
-              <p>
+              <p style={{fontSize: "2em"}}>
                 <b>Player Three Bio</b>
               </p>
               <p>
@@ -147,32 +144,26 @@ export default function About() {
               </p>
             </div>
           </div>
-        </div>
+        {/* </div> */}
         <div
           style={{
             display: "block",
-            textAlign: "right",
+            float: "right",
+            marginTop: "1vh"
           }}
         >
-          <button
+          <Button
+          size="xs"
             type="click"
             onClick={() => navigate("/")}
             style={{
-              display: "flex",
-              alignContent: "flex-end",
               backgroundColor: "#ff532f",
-              color: "black",
-              border: "0px",
-              borderRadius: "8px",
-              marginTop: "45vh",
-              marginLeft: "96vw",
-              marginRight: "15px",
-              padding: "5px",
-              paddingBottom: "2px",
+              color: "white"
             }}
           >
             Back
-          </button>
+          </Button>
+        </div>
         </div>
       </div>
     </>

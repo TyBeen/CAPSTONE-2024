@@ -12,12 +12,6 @@ export default function NewProposalForm() {
   const [userInfo, setUserInfo] = useState([]); //userInfo that persists
 
   const [category, setCategory] = useState("noCategory");
-  // const [categorySoftwareDevelopment, setCategorySoftwareDevelopment] =
-  //   useState(false);
-  // const [categoryDataAnalysis, setCategoryDataAnalysis] = useState(false);
-  // const [categoryUxUi, setCategoryUxUi] = useState(false);
-  // const [categoryDigitalMarketing, setCategoryDigitalMarketing] =
-  //   useState(false);
 
   const [dateStart, setDateStart] = useState();
   const [dateEnd, setDateEnd] = useState();
@@ -43,30 +37,6 @@ export default function NewProposalForm() {
 
     setCategory(e.target.value);
   }
-
-  // function handleSoftDev(e) {
-  //   e.preventDefault();
-
-  //   setCategorySoftwareDevelopment(!categorySoftwareDevelopment);
-  // }
-
-  // function handleDatAn(e) {
-  //   e.preventDefault();
-
-  //   setCategoryDataAnalysis(!categoryDataAnalysis);
-  // }
-
-  // function handleUxUi(e) {
-  //   e.preventDefault();
-
-  //   setCategoryUxUi(!categoryUxUi);
-  // }
-
-  // function handleDigMark(e) {
-  //   e.preventDefault();
-
-  //   setCategoryDigitalMarketing(!categoryDigitalMarketing);
-  // }
 
   function handleCheck(e) {
     e.preventDefault();
@@ -461,7 +431,7 @@ export default function NewProposalForm() {
                     style={{
                       display: "inline-flex",
                       backgroundColor: "#ff532f",
-                      color: "black"
+                      color: "white"
                     }}
                     className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
                   >
