@@ -41,7 +41,7 @@ export default function EditProposalForm({
     };
 
     const response = await fetch(
-      `http://localhost:3000/proposals/updateProposal/${proposalToEdit._id}`,
+      `https://capstone-2024-ppe0.onrender.com/proposals/updateProposal/${proposalToEdit._id}`,
       {
         method: "PUT",
         body: JSON.stringify(body),

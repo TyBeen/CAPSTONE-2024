@@ -28,7 +28,7 @@ export default function DeleteProposalModal({
     };
 
     const response = await fetch(
-      `http://localhost:3000/proposals/deleteProposal/${currentProposal._id}`,
+      `https://capstone-2024-ppe0.onrender.com/proposals/deleteProposal/${currentProposal._id}`,
       {
         method: "DELETE",
         body: JSON.stringify(body),

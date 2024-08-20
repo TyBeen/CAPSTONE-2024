@@ -15,7 +15,7 @@ export default function LoginHeader() {
   }, []);
 
   async function setPersistingCurrentUserObject() {
-    const response = await fetch(`http://localhost:3000/users/${decoded._id}`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/${decoded._id}`);
 
     const data = await response.json();
     console.log("Persistent user data:", data);

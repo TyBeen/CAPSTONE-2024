@@ -27,7 +27,7 @@ export default function AllUsersDrawer({ userInfo }) {
 
   //fetches all registered users
   async function getAllUsers() {
-    const response = await fetch(`http://localhost:3000/users/getAll`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/getAll`);
 
     const data = await response.json();
 
@@ -67,7 +67,7 @@ export default function AllUsersDrawer({ userInfo }) {
     console.log("this user id:", thisUser._id);
 
     const response = await fetch(
-      `http://localhost:3000/proposals/displayUserProposal/${owner}`
+      `https://capstone-2024-ppe0.onrender.com/proposals/displayUserProposal/${owner}`
     );
 
     const data = await response.json();
@@ -87,7 +87,7 @@ export default function AllUsersDrawer({ userInfo }) {
       isAdmin: userData.isAdmin,
     };
 
-    const response = await fetch(`http://localhost:3000/users/${_id}`, {
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
       method: "DELETE",
       body: JSON.stringify(body),
       headers: {

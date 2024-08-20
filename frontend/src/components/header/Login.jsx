@@ -14,7 +14,7 @@ export default function Login() {
       password: e.target.password.value,
     };
 
-    const response = await fetch(`http://localhost:3000/users/login`, {
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/login`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: {

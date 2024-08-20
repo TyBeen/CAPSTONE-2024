@@ -59,7 +59,7 @@ export default function ControlPanel() {
 
   //functions
   async function setPersistingCurrentUserObject() {
-    const response = await fetch(`http://localhost:3000/users/${decoded._id}`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
 
     const data = await response.json();
     console.log("Persistent user data:", data);
@@ -71,7 +71,7 @@ export default function ControlPanel() {
   //fetches all proposals
   async function getAllProposals() {
     const response = await fetch(
-      `http://localhost:3000/proposals/displayAllProposal`
+      `https://capstone-2024-ppe0.onrender.com/proposals/displayAllProposal`
     );
 
     const data = await response.json();
@@ -155,7 +155,7 @@ export default function ControlPanel() {
     const _id = currentProposal.owner;
     console.log("owner id: ", currentProposal.owner);
 
-    const response = await fetch(`http://localhost:3000/users/${_id}`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`);
 
     const data = await response.json();
     console.log("owner info: ", data);
@@ -188,7 +188,7 @@ export default function ControlPanel() {
     };
 
     const response = await fetch(
-      `http://localhost:3000/proposals/updateProposal/${currentProposal._id}`,
+      `https://capstone-2024-ppe0.onrender.com/proposals/updateProposal/${currentProposal._id}`,
       {
         method: "PUT",
         body: JSON.stringify(body),

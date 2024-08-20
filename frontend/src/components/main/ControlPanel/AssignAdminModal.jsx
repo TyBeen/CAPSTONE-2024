@@ -15,7 +15,7 @@ export default function AssignAdminModal() {
 
   //fetches all registered users
   async function getAllUsers() {
-    const response = await fetch(`http://localhost:3000/users/getAll`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/getAll`);
 
     const data = await response.json();
 
@@ -38,7 +38,7 @@ export default function AssignAdminModal() {
       const body = { isAdmin: false };
       console.log("token:", yourJwtToken);
 
-      const response = await fetch(`http://localhost:3000/users/${_id}`, {
+      const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
         method: "PUT",
         body: JSON.stringify(body),
         headers: {
@@ -56,7 +56,7 @@ export default function AssignAdminModal() {
       const body = { isAdmin: true };
       console.log("token", yourJwtToken);
 
-      const response = await fetch(`http://localhost:3000/users/${_id}`, {
+      const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
         method: "PUT",
         body: JSON.stringify(body),
         headers: {
