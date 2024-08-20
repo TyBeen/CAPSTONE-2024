@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Button } from "flowbite-react";
 import Nav from "../header/Nav";
 
 export default function About() {
@@ -144,35 +145,28 @@ export default function About() {
                 ultrices, posuere at erat. In ut eleifend risus, tristique
                 lacinia turpis. Etiam eleifend finibus erat nec luctus. Cras
                 consequat consequat erat, non volutpat nisi vehicula sit.
-              </p>
+                </p>
             </div>
           </div>
-        </div>
         <div
           style={{
             display: "block",
-            textAlign: "right",
+            float: "right",
+            marginTop: "1vh"
           }}
         >
-          <button
+          <Button
+          size="xs"
             type="click"
             onClick={() => navigate("/")}
             style={{
-              display: "flex",
-              alignContent: "flex-end",
               backgroundColor: "#ff532f",
-              color: "black",
-              border: "0px",
-              borderRadius: "8px",
-              marginTop: "45vh",
-              marginLeft: "96vw",
-              marginRight: "15px",
-              padding: "5px",
-              paddingBottom: "2px",
+              color: "white"
             }}
           >
             Back
-          </button>
+          </Button>
+        </div>
         </div>
       </div>
     </>

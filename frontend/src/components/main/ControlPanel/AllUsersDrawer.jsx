@@ -92,7 +92,7 @@ export default function AllUsersDrawer({ userInfo }) {
       body: JSON.stringify(body),
       headers: {
         "Content-type": "application/json",
-        Authorization: { yourJwtToken },
+        Authorization: yourJwtToken,
       },
     });
 

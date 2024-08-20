@@ -4,7 +4,7 @@ const User = require("../models/user");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-
+try {
 // Login user controller
 exports.loginUser = async (req, res) => {
   const password = req.body.password;
@@ -251,3 +251,6 @@ exports.getUserbyUsername = async (req, res) => {
     res.status(500).json({ERROR: err.message});
   }
 };
+} catch (err) {
+  res.status(501).json("Internal Server Error");
+}
