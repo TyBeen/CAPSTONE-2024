@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-
-let loginFailed; //for error code if login fails
+import { useState } from "react";
 
 export default function Login() {
   const navigate = useNavigate(); //to direct user based on credentials (admin or sponsor)
+
+  const [loginFailed, setLoginFailed] = useState("");
 
   async function handleAccountLogin(e) {
     e.preventDefault();
@@ -21,23 +22,20 @@ export default function Login() {
       },
     });
 
-    const userData = await response.json();
-    console.log("User Data: ", userData);
-
-    //store user info
-    localStorage.setItem("jwtToken", userData.token);
-    localStorage.setItem("loggedIn", userData.loggedIn);
-    localStorage.setItem("userInfo", userData.user._id);
-
     //error handling
     if (response.status === 204) {
-      loginFailed = (
-        <p className="text-red-600">Login failed. Please try again.</p>
-      );
+      setLoginFailed("Incorrect password. Please try again.");
 
       e.target.reset();
+      setTimeout(() => setLoginFailed(""), 3000);
     } else {
+      const userData = await response.json();
+      console.log("User Data: ", userData);
+
+      //store user info
       localStorage.setItem("jwtToken", userData.token);
+      localStorage.setItem("loggedIn", userData.loggedIn);
+      localStorage.setItem("userInfo", userData.user._id);
 
       //nav user based on auth
       if (userData.user.isAdmin === true) {
@@ -91,6 +89,11 @@ export default function Login() {
               required
             />
           </div>
+
+          <div style={{ textAlign: "center" }}>
+            <p className="text-red-600">{loginFailed}</p>
+          </div>
+
           <div className="flex items-start mb-5">
             <button
               type="submit"
@@ -100,7 +103,7 @@ export default function Login() {
             </button>
           </div>
         </form>
-        {loginFailed}
+
         <p className="text-center text-sm font-light text-orange-500 dark:text-orange-400">
           Don&apos;t have an account?{" "}
           <a

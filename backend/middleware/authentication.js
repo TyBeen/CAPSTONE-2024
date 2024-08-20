@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
+
 async function authentication (req, res, next) {
+    try {
     const token = req.headers.authorization;
 
     if (!token) {
@@ -21,6 +23,9 @@ async function authentication (req, res, next) {
     } catch (err) {
         res.status(400).json({ERROR: err.message});
     }
+} catch (err) {
+    res.status(501).json("Internal Server Error");
+}
 };
 
 module.exports = authentication;
