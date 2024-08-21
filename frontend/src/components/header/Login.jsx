@@ -30,7 +30,6 @@ export default function Login() {
       setTimeout(() => setLoginFailed(""), 3000);
     } else {
       const userData = await response.json();
-      console.log("User Data: ", userData);
 
       //store user info
       localStorage.setItem("jwtToken", userData.token);

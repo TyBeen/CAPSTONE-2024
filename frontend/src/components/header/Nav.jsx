@@ -30,7 +30,6 @@ export default function Nav() {
     const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
 
     const data = await response.json();
-    console.log("Persistent user data:", data);
 
     setUserInfo(data);
 
@@ -48,7 +47,6 @@ export default function Nav() {
   return (
     <div
       style={{
-        // width: "screen",
         height: "10vh",
         backgroundColor: "#1b3b50",
         alignContent: "center",
@@ -87,7 +85,6 @@ export default function Nav() {
               display: "inline-flex",
               backgroundColor: "unset",
               color: "white",
-              // borderRadius: "8px",
               width: "8px",
             }}
             className="focus:outline-none hover:bg-transparent focus:ring-4 focus:ring-transparent"
@@ -98,9 +95,7 @@ export default function Nav() {
             style={{
               display: "inline-flex",
               backgroundColor: "#ff532f",
-              color: "white",
-              // borderRadius: "8px",
-              // padding: "4px",
+              color: "white"
             }}
             className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
           >
@@ -114,9 +109,7 @@ export default function Nav() {
               style={{
                 display: "inline-flex",
                 backgroundColor: "#ff532f",
-                color: "white",
-                // borderRadius: "8px",
-                // padding: "4px",
+                color: "white"
               }}
               className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
             >
@@ -130,9 +123,7 @@ export default function Nav() {
             style={{
               display: "inline-flex",
               backgroundColor: "#ff532f",
-              color: "white",
-              // borderRadius: "8px",
-              // padding: "4px",
+              color: "white"
             }}
             className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
           >
@@ -147,9 +138,7 @@ export default function Nav() {
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "white",
-                  // borderRadius: "8px",
-                  // padding: "4px",
+                  color: "white"
                 }}
                 className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
               >
@@ -162,9 +151,7 @@ export default function Nav() {
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "white",
-                  // borderRadius: "8px",
-                  // padding: "4px",
+                  color: "white"
                 }}
                 className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
               >
@@ -181,9 +168,7 @@ export default function Nav() {
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "white",
-                  // borderRadius: "8px",
-                  // padding: "4px",
+                  color: "white"
                 }}
                 className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
               >
