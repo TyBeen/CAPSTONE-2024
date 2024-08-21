@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { Drawer, Button, Modal } from "flowbite-react";
@@ -35,7 +36,6 @@ export default function AllUsersDrawer({ userInfo }) {
       usersError = <p className="text-red-600">Error: Could not get users!</p>;
     }
 
-    console.log("all users fetched:", data);
     setAllUsers(data);
   }
 
@@ -64,7 +64,6 @@ export default function AllUsersDrawer({ userInfo }) {
 
   async function userProposalsFound() {
     const owner = thisUser._id;
-    console.log("this user id:", thisUser._id);
 
     const response = await fetch(
       `https://capstone-2024-ppe0.onrender.com/proposals/displayUserProposal/${owner}`
@@ -97,7 +96,6 @@ export default function AllUsersDrawer({ userInfo }) {
     });
 
     const data = await response.json();
-    console.log("Deleted user status: ", data);
 
     getAllUsers();
   }
