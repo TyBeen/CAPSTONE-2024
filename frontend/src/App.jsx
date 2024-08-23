@@ -12,6 +12,8 @@ import ControlPanel from "./components/main/ControlPanel";
 import Proposal from "./components/main/Proposal";
 
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
@@ -33,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

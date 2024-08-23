@@ -7,7 +7,7 @@ async function authentication (req, res, next) {
     const token = req.headers.authorization;
 
     if (!token) {
-        return res.status(400).json("Access denied!");
+        return res.status(440).json("Please log in!");
     }
 
     try {

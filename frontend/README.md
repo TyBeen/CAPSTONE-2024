@@ -19,9 +19,10 @@
 ## Instructions for download and update
 1. Clone repo [CAPSTONE](https://github.com/TyBeen/CAPSTONE-2024.git) into local folder
 2. Create branch off develop01 `git checkout -b [newbranchname]`
-3. Split terminal, use `npm run dev` for backend (mongo) and frontend (vite)
-4. Push changes to capstone directory
-5. Use: 
+3. Run `npm i` to install any missing dependencies
+4. Split terminal, use `npm run dev` for backend (mongo) and frontend (vite)
+5. Push changes to capstone directory
+6. Use: 
 ```
 git add .
 git commit -m "[message]"
@@ -30,7 +31,8 @@ git push --set-upstream origin [thisbranchname]
 
 ## Instructions for deployment
 ### FRONTEND
-Uses gitpages (module) and netlify (host)
+Uses gitpages (module) and netlify ([host](https://uprightcapstone.netlify.app/))
+
 1. Push and merge all updates to _develop01_ branch in github
 2. Open _develop01_ branch locally in vscode and `git pull`
 3. Once local branch is up to date, test develop01 from `localhost:3000` for full functionality
@@ -40,4 +42,6 @@ Uses gitpages (module) and netlify (host)
 >The live client site is updated!
 
 ### BACKEND
-Uses render (host)
+
+Uses render ([host](https://capstone-2024-ppe0.onrender.com/))
+

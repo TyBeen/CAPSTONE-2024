@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { Button, Label, Radio } from "flowbite-react";
 import Nav from "../header/Nav";
@@ -12,10 +13,12 @@ import PropByCatAccordion from "./ControlPanel/PropByCatAccordion";
 import MarkAsReadButton from "./ControlPanel/MarkAsReadButton";
 import DeleteProposalModal from "./ControlPanel/DeleteProposalModal";
 import Error500 from "../../modals/Error500";
+import Error440 from "../../modals/Error440";
 
 export default function ControlPanel() {
   const yourJwtToken = localStorage.getItem("jwtToken");
   const decoded = jwtDecode(yourJwtToken); //https://www.npmjs.com/package/jwt-decode
+  const navigate = useNavigate();
 
   //useState variables
   const [userInfo, setUserInfo] = useState([]); //userInfo that persists
@@ -33,8 +36,9 @@ export default function ControlPanel() {
   const [status, setStatus] = useState(); //proposal status submitted/ approved/ denied
   const [deleteProposal, setDeleteProposal] = useState(false); //shows delete proposal popup to confirm delete
 
-  const [error500, setError500] = useState(false); //modal error message 
-  const [errorMessage, setErrorMessage] = useState(); //data from error (response.json)
+  const [error500, setError500] = useState(false); //modal error 500 message 
+  const [error500Message, setError500Message] = useState(); //data from error (response.json)
+  const [error440, setError440] = useState(false); //modal error 440 message
 
   //useEffect functions
   useEffect(() => {
@@ -197,10 +201,18 @@ export default function ControlPanel() {
 
     const data = await response.json();
     
+    if (response.status === 440) {
+      setError440(true);
+      
+      setTimeout(() => {navigate("/login"), setError440(false)}, 3000);
+    }
+    
     if (response.status === 500) {
       setError500(true);
-      setErrorMessage(data);
+      setError500Message(data);
     }
+
+    
 
     getAllProposals();
     setCurrentProposal(null);
@@ -676,7 +688,8 @@ export default function ControlPanel() {
           </div>
         )}
       </div>
-      <Error500 error500={error500} setError500={setError500} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
+      <Error500 error500={error500} setError500={setError500} error500Message={error500Message} setError500Message={setError500Message} />
+      <Error440 error440={error440} setError440={setError440} />
     </div>
   );
 }
