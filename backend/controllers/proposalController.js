@@ -1,7 +1,9 @@
 // Import the schema needed
 require("dotenv").config();
 const Proposal = require("../models/proposal");
-var nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
+
+try {
 
 exports.displayAllProposal = async (req, res) => {
   try {
@@ -106,7 +108,7 @@ exports.sendProposal = (req, res) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "uprightcapstone@gmail.com",
+      user:'uprightcapstone@gmail.com',
       pass: "nfdthiwrutgrubze",
     },
   });
@@ -197,3 +199,6 @@ exports.displayUserProposal = async (req, res) => {
     res.status(500).json("Proposal Not Found");
   }
 };
+} catch (err) {
+  res.status(501).json("Internal Server Error");
+}

@@ -141,10 +141,9 @@ export default function About() {
                 ultrices, posuere at erat. In ut eleifend risus, tristique
                 lacinia turpis. Etiam eleifend finibus erat nec luctus. Cras
                 consequat consequat erat, non volutpat nisi vehicula sit.
-              </p>
+                </p>
             </div>
           </div>
-        {/* </div> */}
         <div
           style={{
             display: "block",

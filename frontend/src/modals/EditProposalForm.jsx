@@ -41,7 +41,7 @@ export default function EditProposalForm({
     };
 
     const response = await fetch(
-      `http://localhost:3000/proposals/updateProposal/${proposalToEdit._id}`,
+      `https://capstone-2024-ppe0.onrender.com/proposals/updateProposal/${proposalToEdit._id}`,
       {
         method: "PUT",
         body: JSON.stringify(body),
@@ -162,7 +162,7 @@ export default function EditProposalForm({
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "black",
+                  color: "white",
                 }}
                 className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
               >

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { Drawer, Button, Modal } from "flowbite-react";
@@ -27,7 +28,7 @@ export default function AllUsersDrawer({ userInfo }) {
 
   //fetches all registered users
   async function getAllUsers() {
-    const response = await fetch(`http://localhost:3000/users/getAll`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/getAll`);
 
     const data = await response.json();
 
@@ -35,7 +36,6 @@ export default function AllUsersDrawer({ userInfo }) {
       usersError = <p className="text-red-600">Error: Could not get users!</p>;
     }
 
-    console.log("all users fetched:", data);
     setAllUsers(data);
   }
 
@@ -64,10 +64,9 @@ export default function AllUsersDrawer({ userInfo }) {
 
   async function userProposalsFound() {
     const owner = thisUser._id;
-    console.log("this user id:", thisUser._id);
 
     const response = await fetch(
-      `http://localhost:3000/proposals/displayUserProposal/${owner}`
+      `https://capstone-2024-ppe0.onrender.com/proposals/displayUserProposal/${owner}`
     );
 
     const data = await response.json();
@@ -87,17 +86,16 @@ export default function AllUsersDrawer({ userInfo }) {
       isAdmin: userData.isAdmin,
     };
 
-    const response = await fetch(`http://localhost:3000/users/${_id}`, {
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
       method: "DELETE",
       body: JSON.stringify(body),
       headers: {
         "Content-type": "application/json",
-        Authorization: { yourJwtToken },
+        Authorization: yourJwtToken,
       },
     });
 
     const data = await response.json();
-    console.log("Deleted user status: ", data);
 
     getAllUsers();
   }
@@ -119,6 +117,7 @@ export default function AllUsersDrawer({ userInfo }) {
       >
         See All Registered Users
       </Button>
+
 
       <Drawer
         open={isOpen}

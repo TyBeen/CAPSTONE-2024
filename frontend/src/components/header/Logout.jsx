@@ -12,7 +12,6 @@ export default function Logout({isLoggedIn, setIsLoggedIn}) {
     localStorage.removeItem("jwtToken");
     localStorage.removeItem("loggedIn");
     localStorage.removeItem("userInfo");
-    localStorage.removeItem("isAdmin");
 
     navigate("/login");
   }

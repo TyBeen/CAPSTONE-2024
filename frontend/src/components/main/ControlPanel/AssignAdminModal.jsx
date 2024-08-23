@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Modal, Button } from "flowbite-react";
 import { useState, useEffect } from "react";
 
@@ -15,7 +16,7 @@ export default function AssignAdminModal() {
 
   //fetches all registered users
   async function getAllUsers() {
-    const response = await fetch(`http://localhost:3000/users/getAll`);
+    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/getAll`);
 
     const data = await response.json();
 
@@ -23,7 +24,6 @@ export default function AssignAdminModal() {
       usersError = <p className="text-red-600">Error: Could not get users!</p>;
     }
 
-    console.log("all users fetched:", data);
     setAllUsers(data);
   }
 
@@ -31,14 +31,12 @@ export default function AssignAdminModal() {
     e.preventDefault();
 
     const thisUser = user;
-    console.log("this user", thisUser);
 
     if (thisUser.isAdmin) {
       const _id = thisUser._id;
       const body = { isAdmin: false };
-      console.log("token:", yourJwtToken);
 
-      const response = await fetch(`http://localhost:3000/users/${_id}`, {
+      const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
         method: "PUT",
         body: JSON.stringify(body),
         headers: {
@@ -48,15 +46,13 @@ export default function AssignAdminModal() {
       });
 
       const data = await response.json();
-      console.log("User admin access removed:", data);
 
       getAllUsers();
     } else {
       const _id = thisUser._id;
       const body = { isAdmin: true };
-      console.log("token", yourJwtToken);
 
-      const response = await fetch(`http://localhost:3000/users/${_id}`, {
+      const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
         method: "PUT",
         body: JSON.stringify(body),
         headers: {
@@ -66,7 +62,6 @@ export default function AssignAdminModal() {
       });
 
       const data = await response.json();
-      console.log("User admin access granted:", data);
 
       getAllUsers();
     }
