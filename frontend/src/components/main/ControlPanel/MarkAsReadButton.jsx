@@ -21,7 +21,6 @@ export default function MarkAsReadButton({ currentProposal, getAllProposals }) {
     const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
 
     const data = await response.json();
-    console.log("Persistent user data:", data);
 
     setUserInfo(data);
   }

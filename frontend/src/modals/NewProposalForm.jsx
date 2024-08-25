@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,13 +10,11 @@ export default function NewProposalForm() {
   const yourJwtToken = localStorage.getItem("jwtToken");
   const decoded = jwtDecode(yourJwtToken);
 
+  const [message, setMessage] = useState(""); //proposal POST method success/fail message
   const [userInfo, setUserInfo] = useState([]); //userInfo that persists
-
   const [category, setCategory] = useState("noCategory");
-
   const [dateStart, setDateStart] = useState();
   const [dateEnd, setDateEnd] = useState();
-
   const [projectExists, setProjectExists] = useState(false);
 
   useEffect(() => {
@@ -103,9 +102,17 @@ export default function NewProposalForm() {
 
     const data = await response.json();
 
-    console.log("Proposal created.", data);
+    if (response.status === 201) {
+      setMessage("Proposal submitted");
 
-    navigate("/dashboard");
+      setTimeout(() => setMessage(""), navigate("/dashboard"), 2000);
+    }
+
+    if (response.status === 400) {
+      setMessage("Proposal could not be submitted");
+
+      setTimeout(() => setMessage(""), 3000);
+    }
   }
 
   async function handleSendEmail(e) {
@@ -426,6 +433,9 @@ export default function NewProposalForm() {
                     flexDirection: "row",
                   }}
                 >
+                  <p style={{color: "#ff532f"}}>
+                {message}
+                </p>
                   <Button
                     type="submit"
                     style={{

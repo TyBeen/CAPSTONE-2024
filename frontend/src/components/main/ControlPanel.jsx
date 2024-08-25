@@ -14,15 +14,24 @@ import MarkAsReadButton from "./ControlPanel/MarkAsReadButton";
 import DeleteProposalModal from "./ControlPanel/DeleteProposalModal";
 import Error500 from "../../modals/Error500";
 import Error440 from "../../modals/Error440";
+import FooterBar from "../footer/FooterBar";
 
 export default function ControlPanel() {
   const yourJwtToken = localStorage.getItem("jwtToken");
+
+  if (!yourJwtToken) {
+    setError440(true);
+    setTimeout(() => setError440(false), navigate("/login"), 3000);
+  }
+
   const decoded = jwtDecode(yourJwtToken); //https://www.npmjs.com/package/jwt-decode
   const navigate = useNavigate();
 
   //useState variables
   const [userInfo, setUserInfo] = useState([]); //userInfo that persists
   const [userInfoLoaded, setUserInfoLoaded] = useState(false); //stops page from loading till userInfo fetched
+  const [userInfoLoadError, setUserInfoLoadError] = useState(); //admin user info fail to load
+  const [getOwnerInfoError, setGetOwnerInfoError] = useState(); //proposal owner user info fail to load
 
   const [allProposals, setAllProposals] = useState([]); //list of all proposals from database
   const [unreadProposals, setUnreadProposals] = useState([]); //list of all unread proposals based on "read = true or false"
@@ -66,6 +75,16 @@ export default function ControlPanel() {
     const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
 
     const data = await response.json();
+
+    if (response.status === 404) {
+      setUserInfoLoadError("I'm sorry, we could not load user details. You will be redirected to login.");
+
+      localStorage.removeItem("userInfo");
+      localStorage.removeItem("jwtToken");
+      localStorage.removeItem("loggedIn");
+
+      setTimeout(() => navigate("/login"), 3000);
+    }
 
     setUserInfo(data);
     setUserInfoLoaded(true);
@@ -133,12 +152,16 @@ export default function ControlPanel() {
 
     setDeleteProposal(false);
     setCurrentProposal(proposal);
+    setUserInfoLoadError("");
+    setGetOwnerInfoError("");
   }
 
   async function handleProposalClose(e) {
     e.preventDefault();
 
     setCurrentProposal(null);
+    setUserInfoLoadError("");
+    setGetOwnerInfoError("");
   }
 
   //once currentProposal is set, specific proposal things...
@@ -159,6 +182,19 @@ export default function ControlPanel() {
     const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`);
 
     const data = await response.json();
+    console.log(data);
+
+    if (data === null) {
+      setGetOwnerInfoError("I'm sorry, this info is currently unavailable.");
+      setCurrentProposalOwnerInfo({firstName: " ", lastName: " "});
+      return
+    }
+
+    if (response.status === 404) {
+      setGetOwnerInfoError("I'm sorry, this info is currently unavailable.");
+      setCurrentProposalOwnerInfo({firstName: " ", lastName: " "});
+      return
+    }
 
     setCurrentProposalOwnerInfo(data);
   }
@@ -228,6 +264,8 @@ export default function ControlPanel() {
           alignItems: "center",
         }}
       >
+        <p className="text-red-600">{userInfoLoadError}</p>
+
         {userInfoLoaded && (
           <div>
             <h1
@@ -631,7 +669,8 @@ export default function ControlPanel() {
               >
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
                   Submitted by: {currentProposalOwnerInfo.firstName}{" "}
-                  {currentProposalOwnerInfo.lastName}
+                  {currentProposalOwnerInfo.lastName} 
+                  <span className="text-red-600">{getOwnerInfoError}</span>
                 </p>
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
                   Website:{" "}
@@ -646,8 +685,9 @@ export default function ControlPanel() {
                   Preferred contact: {currentProposal.contact}
                 </p>
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
-                  Location: {currentProposalOwnerInfo.city},{" "}
+                  Location: {currentProposalOwnerInfo.city}{" "}
                   {currentProposalOwnerInfo.state}
+                  <span className="text-red-600">{getOwnerInfoError}</span>
                 </p>
                 <br />
                 <p className="text-gray-500 md:text-xl">
@@ -690,6 +730,8 @@ export default function ControlPanel() {
       </div>
       <Error500 error500={error500} setError500={setError500} error500Message={error500Message} setError500Message={setError500Message} />
       <Error440 error440={error440} setError440={setError440} />
+
+      <FooterBar />
     </div>
   );
 }
