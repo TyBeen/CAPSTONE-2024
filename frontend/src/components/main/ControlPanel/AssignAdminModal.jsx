@@ -93,6 +93,9 @@ export default function AssignAdminModal() {
           onClose={() => {
             setShowUserList(false);
           }}
+          style={{
+            height:"98vh"
+        }}
         >
           <Modal.Header></Modal.Header>
           <Modal.Body>

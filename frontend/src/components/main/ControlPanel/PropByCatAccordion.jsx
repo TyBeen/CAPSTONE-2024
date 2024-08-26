@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import { Accordion } from "flowbite-react";
 
-export default function PropByCatAccordion({ handleProposalClick }) {
-  const [allProposals, setAllProposals] = useState([]);
+export default function PropByCatAccordion({ allProposals, handleProposalClick }) {
   const [softDevProposals, setSoftDevProposals] = useState([]);
   const [digMarkProposals, setDigMarkroposals] = useState([]);
   const [datAnProposals, setDatAnProposals] = useState([]);
@@ -12,22 +11,8 @@ export default function PropByCatAccordion({ handleProposalClick }) {
   const [noCategoryProposals, setNoCategoryProposals] = useState([]);
 
   useEffect(() => {
-    getAllProposals(); //stays on top of changing proposals list
-  }, []);
-
-  useEffect(() => {
     sortProposalsByCategory(); //rerenders category lists
   }, [allProposals]);
-
-  //fetches all proposals
-  async function getAllProposals() {
-    const response = await fetch(
-      `https://capstone-2024-ppe0.onrender.com/proposals/displayAllProposal`
-    );
-
-    const data = await response.json();
-    setAllProposals(data);
-  }
 
   //display proposals by category
   async function sortProposalsByCategory() {

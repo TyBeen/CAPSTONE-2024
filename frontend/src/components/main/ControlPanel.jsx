@@ -33,7 +33,7 @@ export default function ControlPanel() {
   const [currentProposal, setCurrentProposal] = useState(); //clicked proposal, fetches by id to display details
   const [currentProposalOwnerInfo, setCurrentProposalOwnerInfo] = useState([]); //sponsor info for selected proposal
 
-  const [category, setCategory] = useState("noCategory");
+  const [category, setCategory] = useState(); //proposal category noCategory, softwareDevelopment, dataAnalytics, digitalMarketing, uxUi
   const [status, setStatus] = useState(); //proposal status submitted/ approved/ denied
   const [deleteProposal, setDeleteProposal] = useState(false); //shows delete proposal popup to confirm delete
 
@@ -190,15 +190,11 @@ export default function ControlPanel() {
   }
 
   function handleCategory(e) {
-    e.preventDefault();
-
     setCategory(e.target.value);
   }
 
   //functions for state variables to hold admin selections until "save changes" is clicked for put request
   function handleStatus(e) {
-    e.preventDefault();
-
     setStatus(e.target.value);
   }
 
@@ -393,7 +389,7 @@ export default function ControlPanel() {
                 width: "30vw",
               }}
             >
-              <PropByCatAccordion handleProposalClick={handleProposalClick} />
+              <PropByCatAccordion allProposals={allProposals} handleProposalClick={handleProposalClick} />
             </div>
           </div>
         </div>

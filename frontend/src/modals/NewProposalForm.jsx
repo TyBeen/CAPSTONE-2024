@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-import { Button } from "flowbite-react";
+import { Button, Datepicker } from "flowbite-react";
 
 export default function NewProposalForm() {
   const navigate = useNavigate();
@@ -31,14 +31,10 @@ export default function NewProposalForm() {
 
   //functions to handle proposal category setting
   function handleCategory(e) {
-    e.preventDefault();
-
     setCategory(e.target.value);
   }
 
   function handleCheck(e) {
-    e.preventDefault();
-
     setProjectExists(!projectExists);
   }
 
