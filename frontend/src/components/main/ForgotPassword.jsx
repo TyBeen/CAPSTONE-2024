@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ForgotPassword = () => {
+const forgotPassword = () => {
 
   const [currentColor, setCurrentColor] = useState("");
   const [fetchResponse, setFetchResponse] = useState("");
@@ -99,4 +99,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default forgotPassword;

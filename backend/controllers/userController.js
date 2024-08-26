@@ -120,7 +120,7 @@ exports.forgotPassword = async (req, res) => {
       subject: "ResetPassword",
       html: `<h1>Reset Your Password</h1>
       <p>Click on the following link to reset your password:<p>
-      <a href="https://steady-semolina-88ced2.netlify.app/resetPassword/?token=${token}">https://steady-semolina-88ced2.netlify.app/resetPassword/?token=${token}</a>
+      <a href="https://uprightcapstone.netlify.app/resetPassword?token=${token}">https://uprightcapstone.netlify.app/resetPassword/?token=${token}</a>
       <p>The link will expire in 10 minutes.<p>
       <p>If you didn't request a password reset, please notify an administator.<p>`,
     };
