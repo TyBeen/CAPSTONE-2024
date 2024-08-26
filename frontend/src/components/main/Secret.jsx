@@ -1,3 +1,9 @@
+import SecretOne from "../../AssetsSecret/SecretOne.jpg";
+import SecretTwo from "../../AssetsSecret/SecretTwo.jpg";
+import SecretThree from "../../AssetsSecret/SecretThree.jpg";
+import SecretFour from "../../AssetsSecret/SecretFour.jpg";
+import SecretFive from "../../AssetsSecret/SecretFive.jpg";
+
 export default function Secret () {
 
 
@@ -5,64 +11,112 @@ export default function Secret () {
         <>
             <div style={{
                 alignContent: "center",
-                textAlign: "center",
-                width: "98vw",
-                height: "100vh",
+                width: "auto",
+                height: "auto",
                 border: "1px solid black",
+                color: "white",
                 backgroundColor: "#1b3b50"
             }}>
 
-<div id="default-carousel" className="relative w-full" data-carousel="slide">
-    
-    <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-        
-        <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="https://drive.google.com/file/d/1QRbQ6JfR7AGzAdPoCIizVFW_Lk-joYHS/view?usp=sharing" className="absolute block w-1000 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="First Sid"></img>
-        </div>
-     
-        <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="https://drive.google.com/thumbnail?id=1aa8v1nsE-qFsyt1-bbCsT6Kr0P3tr1gR&sz=w1000" className="absolute block w-1000 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="second Sid" />
-        </div>
-       
-        <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="https://drive.google.com/thumbnail?id=1DniT8zLumWqCP8zF2vM50sLAmoPZiSsK&sz=w1000" className="absolute block w-1000 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="third Sid" />
-        </div>
-        
-        <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="https://drive.google.com/thumbnail?id=1m49aTuFGB-Y8s6yZ09Oi_wDZCsuNZPiZ&sz=w1000" className="absolute block w-1000 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="fourth Sid" />
-        </div>
-        
-        <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="https://drive.google.com/thumbnail?id=1DniT8zLumWqCP8zF2vM50sLAmoPZiSsK&sz=w1000" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="fifth Sid" />
-        </div>
-    </div>
-    
-    <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-    </div>
-    
-    <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span className="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span className="sr-only">Next</span>
-        </span>
-    </button>
+<h1 style={{
+            textAlign: "center",
+            fontSize: "60px"
+        }}>You Found Sid~!</h1>
+
+<div style={{
+                alignContent: "center",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-around",
+                // paddingBottom: "8vh"
+            }}>   
+<img
+            width="300px"
+            height="300px"
+            src={SecretOne}
+            alt="Sid"
+          ></img>
+
+          <img
+            width="300px"
+            height="300px"
+            src={SecretTwo}
+            alt="Sid Again"
+          ></img>
+
+<img
+            width="300px"
+            height="300px"
+            src={SecretThree}
+            alt="Sid Thrice"
+          ></img>
+
+<img
+            width="300px"
+            height="300px"
+            src={SecretFour}
+            alt="Sid Again Squared"
+          ></img>
+
+<img
+            width="300px"
+            height="300px"
+            src={SecretFive}
+            alt="Sid the Fifth"
+          ></img>
+
+          </div>
+          <h1 style={{
+            textAlign: "center",
+            fontSize: "40px"
+        }}>Sid is the mascot of the Code Bandits!</h1>
 </div>
-            </div>
+
+<div style={{
+                alignContent: "center",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-around",
+                color: "white",
+                backgroundColor: "#1b3b50"
+                // paddingBottom: "8vh"
+            }}>
+    <h1 style={{
+        height: "24vh",
+        width: "100vw",
+        margin: "1%"
+    }}>Did you know that the White House once had it&apos;s own raccoon? Her name was Rebecca and she was given to President Calvin Coolidge
+        in 1926 to be eaten for Thanksgiving dinner! But he refused and kept her as a pet instead. She lived for 3 years</h1>
+
+        <h1 style={{
+            height: "24vh",
+            width: "100vw",
+            margin: "1%"
+        }}>There is an island off the coast of Mexico called Cozumel that has a species of dwarf raccoons, called Pygmy raccoons or Cozumel Raccoons.
+            Due to the size of the island there&apos;s only about 250-300.</h1>
+
+        <h1 style={{
+            height: "24vh",
+            width: "100vw",
+            margin: "1%"
+        }}>not only do raccoons have five fingers like humans but they also use their hands like we do! Raccoons are more than capable of opening many things.
+            Though their thumbs are not opposable like ours they don&apos;t let that stop them!</h1>
+
+        <h1 style={{
+            height: "24vh",
+            width: "100vw",
+            margin: "1%"
+        }}>While raccoons have a similar way of seeing in the dark to cats, they are unfortunately color blind with limited depth preception and a rather narrow filed of vision.
+            Many scientists believe that the mask like markings on their faces help protect their vision from glares and improve their night vision.</h1>
+
+        <h1 style={{
+            height: "24vh",
+            width: "100vw",
+            margin: "1%"
+        }}>Did you know that the White House once had it&apos;s own raccoon? Her name was Rebecca and she was given to President Calvin Coolidge
+        in 1926 to be eaten for Thanksgiving dinner! But he refused and kept her as a pet instead. She lived for 3 years</h1>
+</div>
+
         </>
     )
 }
