@@ -44,20 +44,24 @@ export default function About() {
             >
               <div
                 style={{
-                  marginLeft: "45px",
+                  marginLeft: "6vw",
                   justifyContent: "center",
                   alignContent: "center",
                   padding: "20px",
+                  maxWidth: "60%",
+                  marginBottom: "3%"
                 }}
               >
                 <img src={AmandaPhoto}></img>
               </div>
-              <p>
+              <p
+              style={{
+              marginBottom: "4%"}}>
                 <b>Amanda Brennon</b>
               </p>
               <p
               style={{
-                marginTop: "5%"
+                marginTop: "2%"
               }}>
               Amanda decided to make a change after a career break at 35 for the birth of her son. With extensive work experience in early childhood ed, world arts & linguistics, volleyball coaching, and transcription, Amanda was ready to level up and work as a software developer. She loves puzzles and has strong organizational skills (just don’t look at the house right now). She enjoys MERV full stack development and has two custom websites to build for friends once she finishes the bootcamp! Amanda plans to be a remote software engineer while homeschooling her son and dividing time between family in the USA and Tanzania.
               </p>
@@ -89,10 +93,11 @@ export default function About() {
               >
                 <div
                   style={{
-                    marginLeft: "45px",
+                    marginLeft: "4vw",
                     justifyContent: "center",
                     alignContent: "center",
                     padding: "20px",
+                    maxWidth: "60%"
                   }}
                 >
                   <img src={TyPhoto}></img>
@@ -126,18 +131,23 @@ export default function About() {
             >
               <div
                 style={{
-                  marginLeft: "45px",
+                  marginTop: "5%",
+                  marginLeft: "9vw",
                   justifyContent: "center",
                   alignContent: "center",
-                  padding: "20px",
+                  padding: "20px",  
+                  maxWidth: "43%",
+                  marginBottom: "2%"
                 }}
               >
                 <img src={MorriganPhoto}></img>
               </div>
-              <p>
+              <p
+              style={{marginBottom: "3%"}}>
                 <b>Morrigan Roseingrave</b>
               </p>
-              <p>
+              <p 
+              style={{marginTop: "2%"}}>
                 Morrigan is currently making the career transition from customer
                 service to a software developer! Having worked in a bakery, a
                 deli, forged from the kitchens of the Vermont College of Fine
@@ -151,7 +161,15 @@ export default function About() {
                 spends her time playing video games with her friends, editing
                 videos and writing fantasy.
               </p>
-              <a href="linkedin.com/in/morrigan-roseingrave-42407b324">Check out her LinkedIn here!</a>
+              <div
+              style={{
+                marginTop: "5%",
+                fontWeight: "bold",
+                marginBottom: "5%"
+              }}>
+                <a href="linkedin.com/in/morrigan-roseingrave-42407b324" target="_blank">LinkedIn</a>
+              </div>
+                
             </div>
           </div>
           <div
