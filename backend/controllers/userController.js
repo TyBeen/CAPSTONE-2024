@@ -4,7 +4,7 @@ const User = require("../models/user");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-
+try {
 // Login user controller
 exports.loginUser = async (req, res) => {
   const password = req.body.password;
@@ -120,9 +120,9 @@ exports.forgotPassword = async (req, res) => {
       subject: "ResetPassword",
       html: `<h1>Reset Your Password</h1>
       <p>Click on the following link to reset your password:<p>
-      <a href="https://capstone-2024-ppe0.onrender.com/resetPassword/?token=${token}">https://capstone-2024-ppe0.onrender.com/resetPassword/?token=${token}</a>
+      <a href="https://steady-semolina-88ced2.netlify.app/resetPassword/?token=${token}">https://steady-semolina-88ced2.netlify.app/resetPassword/?token=${token}</a>
       <p>The link will expire in 10 minutes.<p>
-      <p>If you didn't request a password reset, please nofity an addministator.<p>`,
+      <p>If you didn't request a password reset, please notify an administator.<p>`,
     };
 
     //Send the email
@@ -251,3 +251,6 @@ exports.getUserbyUsername = async (req, res) => {
     res.status(500).json({ERROR: err.message});
   }
 };
+} catch (err) {
+  res.status(501).json("Internal Server Error");
+}

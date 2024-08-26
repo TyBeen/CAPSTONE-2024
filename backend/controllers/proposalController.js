@@ -3,6 +3,8 @@ require("dotenv").config();
 const Proposal = require("../models/proposal");
 const nodemailer = require("nodemailer");
 
+try {
+
 exports.displayAllProposal = async (req, res) => {
   try {
     const allProposals = await Proposal.find();
@@ -197,3 +199,6 @@ exports.displayUserProposal = async (req, res) => {
     res.status(500).json("Proposal Not Found");
   }
 };
+} catch (err) {
+  res.status(501).json("Internal Server Error");
+}

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Button } from "flowbite-react";
 import Nav from "../header/Nav";
 import AmandaPhoto from "../../assets/Amanda_bio_photo.jpg"
 import TyPhoto from "../../assets/IMG_4353.jpg"
@@ -19,7 +20,6 @@ export default function About() {
             textAlign: "center",
             marginLeft: "1vw",
             marginTop: "5vh",
-
           }}
         >
           <h4>
@@ -138,35 +138,41 @@ export default function About() {
                 <b>Morrigan Roseingrave</b>
               </p>
               <p>
+                Morrigan is currently making the career transition from customer
+                service to a software developer! Having worked in a bakery, a
+                deli, forged from the kitchens of the Vermont College of Fine
+                Arts and even as a night auditor of a well known hotel chain,
+                she is adaptable and well equipped to deal with public relations
+                and various situations! Well versed in javascript, she enjoys
+                creating the backend working such as routes and controllers and
+                elements of physical design aspect such as placement, colors,
+                and themes. She plans to be a remote software engineer for the
+                freedom of working from anywhere. When not coding, Morrigan
+                spends her time playing video games with her friends, editing
+                videos and writing fantasy.
               </p>
+              <a href="linkedin.com/in/morrigan-roseingrave-42407b324">Check out her LinkedIn here!</a>
             </div>
           </div>
-        </div>
-        <div
-          style={{
-            display: "block",
-            textAlign: "right",
-          }}
-        >
-          <button
-            type="click"
-            onClick={() => navigate("/")}
+          <div
             style={{
-              display: "flex",
-              alignContent: "flex-end",
-              backgroundColor: "#ff532f",
-              color: "black",
-              border: "0px",
-              borderRadius: "8px",
-              marginTop: "45vh",
-              marginLeft: "96vw",
-              marginRight: "15px",
-              padding: "5px",
-              paddingBottom: "2px",
+              display: "block",
+              float: "right",
+              marginTop: "1vh",
             }}
           >
-            Back
-          </button>
+            <Button
+              size="xs"
+              type="click"
+              onClick={() => navigate("/")}
+              style={{
+                backgroundColor: "#ff532f",
+                color: "white",
+              }}
+            >
+              Back
+            </Button>
+          </div>
         </div>
       </div>
     </>
