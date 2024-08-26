@@ -63,14 +63,14 @@ export default function About() {
               style={{
                 marginTop: "2%"
               }}>
-              Amanda decided to make a change after a career break at 35 for the birth of her son. With extensive work experience in early childhood ed, world arts & linguistics, volleyball coaching, and transcription, Amanda was ready to level up and work as a software developer. She loves puzzles and has strong organizational skills (just don’t look at the house right now). She enjoys MERV full stack development and has two custom websites to build for friends once she finishes the bootcamp! Amanda plans to be a remote software engineer while homeschooling her son and dividing time between family in the USA and Tanzania.
+              Amanda decided to make a change after a career break at 35 for the birth of her son. With extensive work experience in early childhood ed, world arts & linguistics, volleyball coaching, and transcription, Amanda was ready to level up and work as a software developer. She loves puzzles and has strong organizational skills (just don’t look at the house right now). She enjoys MERN full stack development and has two custom websites to build for friends once she finishes the bootcamp! Amanda plans to be a remote software engineer while homeschooling her son and dividing time between family in the USA and Tanzania.
               </p>
               <div
               style={{
                 marginTop: "5%",
                 fontWeight: "bold"
               }}>
-                <a href="www.linkedin.com/in/amanda-jeanne-710a04276" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/amanda-jeanne-710a04276/" target="_blank">LinkedIn</a>
               </div>
                 
             </div>
@@ -167,7 +167,7 @@ export default function About() {
                 fontWeight: "bold",
                 marginBottom: "5%"
               }}>
-                <a href="linkedin.com/in/morrigan-roseingrave-42407b324" target="_blank">LinkedIn</a>
+                <a href="https://linkedin.com/in/morrigan-roseingrave-42407b324/" target="_blank">LinkedIn</a>
               </div>
                 
             </div>
