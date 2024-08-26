@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import { Button, Label, Radio } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 import Nav from "../header/Nav";
 import ViewProposalFormModal from "./ControlPanel/ViewProposalFormModal";
 import AllUsersDrawer from "../main/ControlPanel/AllUsersDrawer";
@@ -14,12 +15,15 @@ import DeleteProposalModal from "./ControlPanel/DeleteProposalModal";
 import Error500 from "../../modals/Error500";
 
 export default function ControlPanel() {
+  const navigate = useNavigate();
   const yourJwtToken = localStorage.getItem("jwtToken");
   const decoded = jwtDecode(yourJwtToken); //https://www.npmjs.com/package/jwt-decode
 
   //useState variables
   const [userInfo, setUserInfo] = useState([]); //userInfo that persists
   const [userInfoLoaded, setUserInfoLoaded] = useState(false); //stops page from loading till userInfo fetched
+  const [userInfoLoadError, setUserInfoLoadError] = useState(); //admin user info fail to load
+  const [getOwnerInfoError, setGetOwnerInfoError] = useState(); //proposal owner user info fail to load
 
   const [allProposals, setAllProposals] = useState([]); //list of all proposals from database
   const [unreadProposals, setUnreadProposals] = useState([]); //list of all unread proposals based on "read = true or false"
@@ -62,6 +66,16 @@ export default function ControlPanel() {
     const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
 
     const data = await response.json();
+
+    if (response.status === 404) {
+      setUserInfoLoadError("I'm sorry, we could not load user details. You will be redirected to login.");
+
+      localStorage.removeItem("userInfo");
+      localStorage.removeItem("jwtToken");
+      localStorage.removeItem("loggedIn");
+
+      setTimeout(() => navigate("/login"), 3000);
+    }
 
     setUserInfo(data);
     setUserInfoLoaded(true);
@@ -129,12 +143,16 @@ export default function ControlPanel() {
 
     setDeleteProposal(false);
     setCurrentProposal(proposal);
+    setUserInfoLoadError("");
+    setGetOwnerInfoError("");
   }
 
   async function handleProposalClose(e) {
     e.preventDefault();
 
     setCurrentProposal(null);
+    setUserInfoLoadError("");
+    setGetOwnerInfoError("");
   }
 
   //once currentProposal is set, specific proposal things...
@@ -155,6 +173,18 @@ export default function ControlPanel() {
     const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`);
 
     const data = await response.json();
+
+    if (data === null) {
+      setGetOwnerInfoError("I'm sorry, this info is currently unavailable.");
+      setCurrentProposalOwnerInfo({firstName: " ", lastName: " "});
+      return
+    }
+
+    if (response.status === 404) {
+      setGetOwnerInfoError("I'm sorry, this info is currently unavailable.");
+      setCurrentProposalOwnerInfo({firstName: " ", lastName: " "});
+      return
+    }
 
     setCurrentProposalOwnerInfo(data);
   }
@@ -216,6 +246,7 @@ export default function ControlPanel() {
           alignItems: "center",
         }}
       >
+      <p className="text-red-600">{userInfoLoadError}</p>
         {userInfoLoaded && (
           <div>
             <h1
@@ -619,7 +650,8 @@ export default function ControlPanel() {
               >
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
                   Submitted by: {currentProposalOwnerInfo.firstName}{" "}
-                  {currentProposalOwnerInfo.lastName}
+                  {currentProposalOwnerInfo.lastName} 
+                  <span className="text-red-600">{getOwnerInfoError}</span>
                 </p>
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
                   Website:{" "}
@@ -634,8 +666,9 @@ export default function ControlPanel() {
                   Preferred contact: {currentProposal.contact}
                 </p>
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
-                  Location: {currentProposalOwnerInfo.city},{" "}
+                  Location: {currentProposalOwnerInfo.city}{" "}
                   {currentProposalOwnerInfo.state}
+                  <span className="text-red-600">{getOwnerInfoError}</span>
                 </p>
                 <br />
                 <p className="text-gray-500 md:text-xl">

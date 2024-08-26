@@ -168,7 +168,7 @@ exports.resetPassword = async (req, res) => {
     //find the user with the id from the token
     const user = await User.findOne({_id: decodedToken.userId });
     if (!user) {
-      return res.status(401).send({message: "no user found"});
+      return res.status(401).send({message: "Username not found"});
     }
 
     //has the new password
@@ -233,7 +233,7 @@ exports.getUserById = async (req, res) => {
 
     res.status(200).json(data);
   } catch (err) {
-    res.status(500).json("Could not find user!");
+    res.status(404).json("Could not find user!");
   }
 };
 

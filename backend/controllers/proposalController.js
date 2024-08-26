@@ -67,10 +67,10 @@ exports.createProposal = async (req, res) => {
     res.status(201).json("Proposal Submitted!");
   } catch (err) {
     console.log("err", err);
-    console.log("Something went wrong. Proposal could not be created");
+    console.log("Proposal could not be created");
     res
-      .status(500)
-      .json("Error: Something went wrong. Proposal could not be created");
+      .status(400)
+      .json("Proposal could not be created");
   }
 };
 
