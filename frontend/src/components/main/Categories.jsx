@@ -51,7 +51,7 @@ export default function Categories() {
             style={{
                 display: "flex",
                 justifyContent: "center",
-                alignContent: "center"
+                alignContent: "center",
             }}>
                 <div
                 style={{
@@ -61,65 +61,61 @@ export default function Categories() {
                     width: "80%",
                     maxWidth: "80%",
                     justifyContent: "center",
-                    alignItems: "center"
+                    alignItems: "center",
                 }}>
                     <div 
                     ref={containerRef1}
+                    className="image-container"
                     style={{
                         color: "black",
                         textAlign: "center",
-                        border: "1px solid #ddd"
+                        border: "0px"
                     }}
                     onMouseEnter={() => handleMouseEnter("SFTWREPts")}
                     onMouseLeave={handleMouseLeave}
                     >
                         <img 
                         src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        className="image"
                         style={{
                             height: "20vh",
                             width: "15vw",
                             margin: "auto",
                             position: "relative"
                         }}/>
-                        <div className="SFTWREPts"
+                        <div className="SFTWREPts bullet-points"
                         style={{
                             position: "absolute",
-                            bottom: "rgb(26, 153, 136)",
-                            left: "15vw",
+                            bottom: "16vh",
+                            left: "0vw",
                             color: "white",
-                            visibility: "hidden",
-                            textShadow: "rgb(0, 0, 0) 2px 2px -1px" 
                         }}>
                         • Javascript Foundations
                         </div>
-                        <div className="SFTWREPts"
+                        <div className="SFTWREPts bullet-points"
                         style={{
                             position: "absolute",
                             color: "white",
-                            bottom: "50vh",
-                            left: "15vw",
-                            visibility: "hidden",
-                            textShadow: "rgb(0, 0, 0) 2px 2px -1px" 
+                            bottom: "13vh",
+                            left: "0vw",
                         }}>
                         • React Front-End Development
                         </div>
-                        <div className="SFTWREPts"
+                        <div className="SFTWREPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "47vh",
-                            left: "15vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "10vh",
+                            left: "0vw",
                         }}>
                         • MongoDB Back-End Development
                         </div>
-                        <div className="SFTWREPts"
+                        <div className="SFTWREPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "44vh",
-                            left: "15vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "7vh",
+                            left: "0vw",
                         }}>
                         • Full-Stack Software Development
                         </div>
@@ -132,60 +128,58 @@ export default function Categories() {
                     </div>
                     <div
                     ref={containerRef2}
+                    className="image-container"
                     style={{
-                        color: "rgb(26, 153, 136)",
+                        color: "black",
                         textAlign: "center",
-                        border: "1px solid #ddd",
+                        border: "0px",
                         position: "relative"
                     }}
                     onMouseEnter={() => handleMouseEnter("DMPts")}
                     onMouseLeave={handleMouseLeave}>
                         <img src="https://media.istockphoto.com/id/1443560890/photo/digital-marketing-business-technology-concept-website-advertisement-email-social-media.jpg?s=2048x2048&w=is&k=20&c=B0aClNHXUKSOsHPwEVuYWT2u_haG5YGGo24mrzhqcSw="
+                        className="image"
                         style={{
                             height: "20vh",
                             width: "15vw",
                             margin: "auto"
                         }}/>
-                        <div className="DMPts"
+                        <div className="DMPts bullet-points"
                         style={{
                             position: "absolute",
                             bottom: "16vh",
-                            left: "5vw",
-                            color: "rgb(26, 153, 136)",
-                            visibility: "hidden"
+                            left: "0vw",
+                            color: "white",
                         }}>
                         • Social Media Management
 
                         </div>
-                        <div className="DMPts"
+                        <div className="DMPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
+                            color: "white",
                             bottom: "13vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            left: "0vw",
                         }}>
                         • Content and Email Marketing
 
                         </div>
-                        <div className="DMPts"
+                        <div className="DMPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
+                            color: "white",
                             bottom: "10vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            left: "0vw",
                         }}>
                         • Search Engine Marketing
 
                         </div>
-                        <div className="DMPts"
+                        <div className="DMPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
+                            color: "white",
                             bottom: "7vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            left: "0vw",
                         }}
                         >
                         • Marketing Automation
@@ -197,62 +191,60 @@ export default function Categories() {
                     </div>
                     <div
                     ref={containerRef3}
+                    className="image-container"
                     style={{
-                        color: "rgb(26, 153, 136)",
+                        color: "black",
                         textAlign: "center",
-                        border: "1px solid #ddd",
+                        border: "0px",
                         position: "relative"
                     }}
                     onMouseEnter={() => handleMouseEnter("UIUXPTS")}
                     onMouseLeave={handleMouseLeave}
                     >
                         <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            className="image"
                             style={{
                                 height: "20vh",
                                 width: "15vw",
                                 margin: "auto"
                             }}
                         />
-                        <div className="UIUXPTS"
+                        <div className="UIUXPTS bullet-points"
                         style={{
                             position: "absolute",
-                            bottom: "8vh",
-                            left: "5vw",
-                            color: "rgb(26, 153, 136)",
-                            visibility: "hidden"
+                            bottom: "16vh",
+                            left: "0vw",
+                            color: "white",
                         }}>
                         • UX/UI Design Fundementals
 
                         </div>
-                        <div className="UIUXPTS"
+                        <div className="UIUXPTS bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "11vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "13vh",
+                            left: "0vw",
                         }}>
                         • UX Research
 
                         </div>
-                        <div className="UIUXPTS"
+                        <div className="UIUXPTS bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "14vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "10vh",
+                            left: "0vw",
                         }}>
                         • Usability
 
                         </div>
-                        <div className="UIUXPTS"
+                        <div className="UIUXPTS bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "17vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "7vh",
+                            left: "0vw",
                         }}>
                         • Interface Design
                         </div>
@@ -264,64 +256,61 @@ export default function Categories() {
                     </div>
                     <div
                     ref={containerRef4}
+                    className="image-container"
                     style={{
                         color: "black",
                         textAlign: "center",
-                        border: "1px solid #ddd",
-                        marginLeft: "-2%",
+                        border: "0px",
                         position: "relative"
                     }}
                     onMouseEnter={() => handleMouseEnter("DAPts")}
                     onMouseLeave={handleMouseLeave}>
-                        <img src="https://images.pexels.com/photos/95916/pexels-photo-95916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        <img src="https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        className="image"
                         style={{
                             height: "20vh",
                             width: "15vw",
                             margin: "auto"
                         }}/>
-                        <div className="DAPts"
+                        <div className="DAPts bullet-points"
                         style={{
                             position: "absolute",
-                            bottom: "8vh",
-                            left: "5vw",
-                            color: "rgb(26, 153, 136)",
-                            visibility: "hidden"
+                            bottom: "16vh",
+                            left: "0vw",
+                            color: "white",
                         }}>
                         • Business Intelligence Technologies
 
 
                         </div>
-                        <div className="DAPts"
+                        <div className="DAPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "11vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "13vh",
+                            left: "0vw",
                         }}>
                         • Data Collection and Cleaning
 
 
                         </div>
-                        <div className="DAPts"
+                        <div className="DAPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "14vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "10vh",
+                            left: "0vw",
                         }}>
                         • Data Visualization
 
 
                         </div>
-                        <div className="DAPts"
+                        <div className="DAPts bullet-points"
                         style={{
                             position: "absolute",
-                            color: "rgb(26, 153, 136)",
-                            bottom: "17vh",
-                            left: "5vw",
-                            visibility: "hidden"
+                            color: "white",
+                            bottom: "7vh",
+                            left: "0vw",
                         }}>
                         • Statistical Analysis
                         </div>
