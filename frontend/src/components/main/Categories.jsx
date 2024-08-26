@@ -1,4 +1,4 @@
-import "../../CSS/Categories.css"
+import "../../../CSS/Categories.css"
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -202,7 +202,7 @@ export default function Categories() {
                     onMouseEnter={() => handleMouseEnter("UIUXPTS")}
                     onMouseLeave={handleMouseLeave}
                     >
-                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        <img src="https://images.pexels.com/photos/6615230/pexels-photo-6615230.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                             className="image"
                             style={{
                                 height: "20vh",
