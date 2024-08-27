@@ -111,7 +111,7 @@ try {
     });
 
     var mailOptions = {
-      from: '"Upright Capstone" <uprightcapstone@gmail.com>',
+      from: '"Capstone Portal" <uprightcapstone@gmail.com>',
       to: "brennan.amanda.j@gmail.com",
       subject: "New Proposal Submitted",
       text: plaintextoutput,
