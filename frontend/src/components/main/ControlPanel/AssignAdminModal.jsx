@@ -16,7 +16,9 @@ export default function AssignAdminModal() {
 
   //fetches all registered users
   async function getAllUsers() {
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/getAll`);
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/getAll`
+    );
 
     const data = await response.json();
 
@@ -36,14 +38,17 @@ export default function AssignAdminModal() {
       const _id = thisUser._id;
       const body = { isAdmin: false };
 
-      const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
-        method: "PUT",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-type": "application/json",
-          Authorization: yourJwtToken,
-        },
-      });
+      const response = await fetch(
+        `https://capstone-2024-ppe0.onrender.com/users/${_id}`,
+        {
+          method: "PUT",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-type": "application/json",
+            Authorization: yourJwtToken,
+          },
+        }
+      );
 
       const data = await response.json();
 
@@ -52,14 +57,17 @@ export default function AssignAdminModal() {
       const _id = thisUser._id;
       const body = { isAdmin: true };
 
-      const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
-        method: "PUT",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-type": "application/json",
-          Authorization: yourJwtToken,
-        },
-      });
+      const response = await fetch(
+        `https://capstone-2024-ppe0.onrender.com/users/${_id}`,
+        {
+          method: "PUT",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-type": "application/json",
+            Authorization: yourJwtToken,
+          },
+        }
+      );
 
       const data = await response.json();
 
@@ -94,8 +102,8 @@ export default function AssignAdminModal() {
             setShowUserList(false);
           }}
           style={{
-            height:"98vh"
-        }}
+            height: "98vh",
+          }}
         >
           <Modal.Header></Modal.Header>
           <Modal.Body>

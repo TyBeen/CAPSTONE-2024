@@ -94,6 +94,6 @@ Control Panel holds AllProposalModal, AllUsersDrawer, AssignAdminModal, DeletePr
 Proposal page holds NewProposalForm, proposalStatus, and EditProposalForm components
 
 ## Developers
-### Ty Burlington (host)
-### Amanda Brennan ([host](https://github.com/artxofxwords))
-### Morrigan Rosingrave (host)
+### Ty Benedict ([github](https://github.com/TyBeen))
+### Amanda Brennan ([github](https://github.com/artxofxwords))
+### Morrigan Roseingrave ([github](https://github.com/M-Roseingrave))

@@ -16,7 +16,9 @@ export default function LoginHeader() {
   }, []);
 
   async function setPersistingCurrentUserObject() {
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`
+    );
 
     const data = await response.json();
 
@@ -70,12 +72,24 @@ export default function LoginHeader() {
                 alignItems: "center",
                 marginTop: "5vh",
                 color: "white",
-                width: "65vw"
+                width: "65vw",
               }}
             >
-              We are excited you have signed up as a sponsor! To get started, take a glance below at the descriptions for the different bootcamps that Upright offers- you will be asked to assign your project proposal to one of these. But don&apos;t worry! If Upright Capstone admin sees your project better served by a different class, they can reassign it. <br /><br />
-              You can also get an idea of what our classes are capable of by clicking the button below and watching a capstone presentation/demo from the library. We recommend it before submitting your own proposal for a capstone project! <br /><br />
-              When you are ready to make your submission, click the button below to submit a proposal. You can come back later and check the status of your submitted proposal(s) here, too!
+              We are excited you have signed up as a sponsor! To get started,
+              take a glance below at the descriptions for the different
+              bootcamps that Upright offers- you will be asked to assign your
+              project proposal to one of these. But don&apos;t worry! If Upright
+              Capstone admin sees your project better served by a different
+              class, they can reassign it. <br />
+              <br />
+              You can also get an idea of what our classes are capable of by
+              clicking the button below and watching a capstone
+              presentation/demo from the library. We recommend it before
+              submitting your own proposal for a capstone project! <br />
+              <br />
+              When you are ready to make your submission, click the button below
+              to submit a proposal. You can come back later and check the status
+              of your submitted proposal(s) here, too!
             </p>
             <p
               style={{
@@ -86,16 +100,17 @@ export default function LoginHeader() {
                 marginBottom: "5%",
               }}
             >
-              <Button 
-              size="xs"
-              type="click"
-              onClick={() => navigateProp("/library")}
-              style={{
-                display: "inline-flex",
-                backgroundColor: "#ff532f",
-                color: "white"
-              }}>
-              Capstone Presentation Library
+              <Button
+                size="xs"
+                type="click"
+                onClick={() => navigateProp("/library")}
+                style={{
+                  display: "inline-flex",
+                  backgroundColor: "#ff532f",
+                  color: "white",
+                }}
+              >
+                Capstone Presentation Library
               </Button>
 
               <Button
@@ -105,7 +120,7 @@ export default function LoginHeader() {
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "white"
+                  color: "white",
                 }}
               >
                 Submit a Proposal / Check on my Proposal

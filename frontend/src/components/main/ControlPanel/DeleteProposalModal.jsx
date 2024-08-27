@@ -49,15 +49,14 @@ export default function DeleteProposalModal({
 
   return (
     <>
-    {!deleteProposal && (
-      (
+      {!deleteProposal && (
         <Button
           type="click"
           style={{
             display: "inline-flex",
             marginLeft: "10px",
             backgroundColor: "transparent",
-            color: "black"
+            color: "black",
           }}
           onClick={(e) => {
             handleClickProposalDelete(e);
@@ -80,46 +79,45 @@ export default function DeleteProposalModal({
           </svg>
           Delete Proposal
         </Button>
-      )
-    )}
+      )}
 
-    {deleteProposal && (
-      <div>
-      <Modal show={deleteProposal} onClose={() => setDeleteProposal(false)}>
-        <Modal.Header>Confirm Proposal Deletion</Modal.Header>
-        <Modal.Body>
-          <div className="space-y-6">
-            <p className="text-base leading-relaxed text-gray-500">
-              Are you sure you want to delete this{" "}
-              {currentProposal.companyName} proposal?
-            </p>
-            <p className="text-base leading-relaxed text-gray-500">
-              Action cannot be undone. This will delete the proposal
-              completely from the database.
-            </p>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            className="bg-red-500"
-            onClick={(e) => {
-              handleDeleteProposal(e);
-            }}
-          >
-            Yes, I&apos;m sure. Delete proposal.
-          </Button>
-          <Button
-            color="gray"
-            onClick={(e) => {
-              handleClickProposalDelete(e);
-            }}
-          >
-            No, cancel deletion.
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </div>
-    )}
+      {deleteProposal && (
+        <div>
+          <Modal show={deleteProposal} onClose={() => setDeleteProposal(false)}>
+            <Modal.Header>Confirm Proposal Deletion</Modal.Header>
+            <Modal.Body>
+              <div className="space-y-6">
+                <p className="text-base leading-relaxed text-gray-500">
+                  Are you sure you want to delete this{" "}
+                  {currentProposal.companyName} proposal?
+                </p>
+                <p className="text-base leading-relaxed text-gray-500">
+                  Action cannot be undone. This will delete the proposal
+                  completely from the database.
+                </p>
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                className="bg-red-500"
+                onClick={(e) => {
+                  handleDeleteProposal(e);
+                }}
+              >
+                Yes, I&apos;m sure. Delete proposal.
+              </Button>
+              <Button
+                color="gray"
+                onClick={(e) => {
+                  handleClickProposalDelete(e);
+                }}
+              >
+                No, cancel deletion.
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
+      )}
     </>
-  )
+  );
 }

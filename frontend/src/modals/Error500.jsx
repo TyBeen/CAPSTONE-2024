@@ -2,8 +2,6 @@
 import {Modal, Button} from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 
-//!Modal seems to be out of scope for import, consider relocating Modals folder
-
 //enter this code onto any component that contains a function that could throw a 500 error
 //at top of page:
 //import Error500 from ...modals/Error500

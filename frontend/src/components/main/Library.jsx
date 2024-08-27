@@ -13,7 +13,7 @@ export default function Library() {
         style={{
           display: "flex",
           flexDirection: "column",
-          marginLeft: "4vw"
+          marginLeft: "4vw",
         }}
       >
         <h1
@@ -49,7 +49,7 @@ export default function Library() {
             backgroundColor: "#ff532f",
             color: "white",
             float: "right",
-            margin: "1vh"
+            margin: "1vh",
           }}
         >
           Back Home

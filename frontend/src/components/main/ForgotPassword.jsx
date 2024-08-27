@@ -1,24 +1,25 @@
 import { useState } from "react";
 
 const forgotPassword = () => {
-
   const [currentColor, setCurrentColor] = useState("");
   const [fetchResponse, setFetchResponse] = useState("");
-
 
   async function forgotPasswordFetch(e) {
     e.preventDefault();
 
     try {
-      let response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/forgotPassword`, {
-        method: "POST",
-        body: JSON.stringify({
-          email: e.target.email.value,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let response = await fetch(
+        `https://capstone-2024-ppe0.onrender.com/users/forgotPassword`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            email: e.target.email.value,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       let results = await response.json();
       console.log(results);
       if (response.status === 200) {
@@ -31,7 +32,7 @@ const forgotPassword = () => {
         setFetchResponse("Server error!");
         setCurrentColor("red");
       }
-    } catch(err) {
+    } catch (err) {
       if (err.response.status === 404) {
         console.log("User not found");
       } else {
@@ -39,7 +40,6 @@ const forgotPassword = () => {
       }
     }
   }
-  
 
   return (
     <>
@@ -76,23 +76,33 @@ const forgotPassword = () => {
               />
             </div>
             <button
-            type="click"
-            style={{
-              display: "inline-flex",
-              backgroundColor: "#ff532f",
-              color: "white",
-              borderRadius: "8px",
-              padding: "4px",
-              paddingLeft: "80px",
-              paddingRight: "80px",
-              marginLeft: "3vw"
-            }}
-            className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
-          >
-            Reset
-          </button>
+              type="click"
+              style={{
+                display: "inline-flex",
+                backgroundColor: "#ff532f",
+                color: "white",
+                borderRadius: "8px",
+                padding: "4px",
+                paddingLeft: "80px",
+                paddingRight: "80px",
+                marginLeft: "3vw",
+              }}
+              className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
+            >
+              Reset
+            </button>
           </form>
-          <div className={currentColor === 'red' ? 'border-solid border-2 border-red-500' : currentColor === 'green' ? 'border-solid border-2 border-green-500' : ''}>{fetchResponse}</div>
+          <div
+            className={
+              currentColor === "red"
+                ? "border-solid border-2 border-red-500"
+                : currentColor === "green"
+                ? "border-solid border-2 border-green-500"
+                : ""
+            }
+          >
+            {fetchResponse}
+          </div>
         </div>
       </div>
     </>

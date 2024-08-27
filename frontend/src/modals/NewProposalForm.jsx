@@ -22,7 +22,9 @@ export default function NewProposalForm() {
   }, []);
 
   async function setPersistingCurrentUserObject() {
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`
+    );
 
     const data = await response.json();
 
@@ -81,7 +83,7 @@ export default function NewProposalForm() {
       owner: decoded._id,
       status: "submitted",
       read: false,
-      updated: false
+      updated: false,
     };
 
     const response = await fetch(
@@ -141,16 +143,19 @@ export default function NewProposalForm() {
       owner: decoded._id,
       status: "submitted",
       read: false,
-      updated: false
+      updated: false,
     };
 
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/proposals/send`, {
-      method: "POST",
-      body: JSON.stringify(proposalData),
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/proposals/send`,
+      {
+        method: "POST",
+        body: JSON.stringify(proposalData),
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
 
     const data = await response.json();
     console.log("Proposal sent.", data);
@@ -218,7 +223,7 @@ export default function NewProposalForm() {
                   <fieldset>
                     <legend>
                       <p
-                      className="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        className="mb-2 text-sm font-medium text-gray-900 dark:text-white"
                         style={{
                           display: "inline-flex",
                           marginBottom: "8px",
@@ -412,7 +417,7 @@ export default function NewProposalForm() {
                     The best contact for this proposal (enter a valid email)
                   </label>
                   <input
-                  type="email"
+                    type="email"
                     name="contact"
                     id="contact"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -428,15 +433,13 @@ export default function NewProposalForm() {
                     flexDirection: "row",
                   }}
                 >
-                  <p style={{color: "#ff532f"}}>
-                {message}
-                </p>
+                  <p style={{ color: "#ff532f" }}>{message}</p>
                   <Button
                     type="submit"
                     style={{
                       display: "inline-flex",
                       backgroundColor: "#ff532f",
-                      color: "white"
+                      color: "white",
                     }}
                     className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
                   >

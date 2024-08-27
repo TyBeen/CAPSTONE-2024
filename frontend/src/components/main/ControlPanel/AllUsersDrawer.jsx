@@ -28,7 +28,9 @@ export default function AllUsersDrawer({ userInfo }) {
 
   //fetches all registered users
   async function getAllUsers() {
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/getAll`);
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/getAll`
+    );
 
     const data = await response.json();
 
@@ -86,14 +88,17 @@ export default function AllUsersDrawer({ userInfo }) {
       isAdmin: userData.isAdmin,
     };
 
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`, {
-      method: "DELETE",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-type": "application/json",
-        Authorization: yourJwtToken,
-      },
-    });
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/${_id}`,
+      {
+        method: "DELETE",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-type": "application/json",
+          Authorization: yourJwtToken,
+        },
+      }
+    );
 
     const data = await response.json();
 
@@ -117,7 +122,6 @@ export default function AllUsersDrawer({ userInfo }) {
       >
         See All Registered Users
       </Button>
-
 
       <Drawer
         open={isOpen}
@@ -241,16 +245,16 @@ export default function AllUsersDrawer({ userInfo }) {
                               </small>
                             </h1>
                             {userProposalsLoaded && (
-                            <h1 className="text-2xl font-extrabold dark:text-white">
-                              Proposals submitted:
-                              <small className="ms-2 font-semibold text-gray-500">
-                                <ul>
-                                  {userProposals?.map((item) => (
-                                    <li key={item}>{item}</li>
-                                  ))}
-                                </ul>
-                              </small>
-                            </h1>
+                              <h1 className="text-2xl font-extrabold dark:text-white">
+                                Proposals submitted:
+                                <small className="ms-2 font-semibold text-gray-500">
+                                  <ul>
+                                    {userProposals?.map((item) => (
+                                      <li key={item}>{item}</li>
+                                    ))}
+                                  </ul>
+                                </small>
+                              </h1>
                             )}
                           </div>
                         </Modal.Body>

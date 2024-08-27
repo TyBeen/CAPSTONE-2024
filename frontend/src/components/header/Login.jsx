@@ -14,13 +14,16 @@ export default function Login() {
       password: e.target.password.value,
     };
 
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/login`, {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/login`,
+      {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     //error handling
     if (response.status === 204) {

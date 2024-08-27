@@ -37,7 +37,7 @@ export default function ControlPanel() {
   const [status, setStatus] = useState(); //proposal status submitted/ approved/ denied
   const [deleteProposal, setDeleteProposal] = useState(false); //shows delete proposal popup to confirm delete
 
-  const [error500, setError500] = useState(false); //modal error message 
+  const [error500, setError500] = useState(false); //modal error message
   const [errorMessage, setErrorMessage] = useState(); //data from error (response.json)
 
   //useEffect functions
@@ -63,12 +63,16 @@ export default function ControlPanel() {
 
   //functions
   async function setPersistingCurrentUserObject() {
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`
+    );
 
     const data = await response.json();
 
     if (response.status === 404) {
-      setUserInfoLoadError("I'm sorry, we could not load user details. You will be redirected to login.");
+      setUserInfoLoadError(
+        "I'm sorry, we could not load user details. You will be redirected to login."
+      );
 
       localStorage.removeItem("userInfo");
       localStorage.removeItem("jwtToken");
@@ -170,20 +174,22 @@ export default function ControlPanel() {
   async function getOwnerInfo() {
     const _id = currentProposal.owner;
 
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${_id}`);
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/${_id}`
+    );
 
     const data = await response.json();
 
     if (data === null) {
       setGetOwnerInfoError("I'm sorry, this info is currently unavailable.");
-      setCurrentProposalOwnerInfo({firstName: " ", lastName: " "});
-      return
+      setCurrentProposalOwnerInfo({ firstName: " ", lastName: " " });
+      return;
     }
 
     if (response.status === 404) {
       setGetOwnerInfoError("I'm sorry, this info is currently unavailable.");
-      setCurrentProposalOwnerInfo({firstName: " ", lastName: " "});
-      return
+      setCurrentProposalOwnerInfo({ firstName: " ", lastName: " " });
+      return;
     }
 
     setCurrentProposalOwnerInfo(data);
@@ -222,7 +228,7 @@ export default function ControlPanel() {
     );
 
     const data = await response.json();
-    
+
     if (response.status === 500) {
       setError500(true);
       setErrorMessage(data);
@@ -242,7 +248,7 @@ export default function ControlPanel() {
           alignItems: "center",
         }}
       >
-      <p className="text-red-600">{userInfoLoadError}</p>
+        <p className="text-red-600">{userInfoLoadError}</p>
         {userInfoLoaded && (
           <div>
             <h1
@@ -252,7 +258,7 @@ export default function ControlPanel() {
                 marginBottom: "5vh",
               }}
             >
-              <span style={{ color: "#ff532f" }}>Upright Capstone</span> | Admin
+              <span style={{ color: "#ff532f" }}>Capstone Portal</span> | Admin
               Control Panel
             </h1>
           </div>
@@ -270,7 +276,10 @@ export default function ControlPanel() {
 
           <AllUsersDrawer userInfo={userInfo} />
 
-          <AllProposalsModal handleProposalClick={handleProposalClick} />
+          <AllProposalsModal
+            allProposals={allProposals}
+            handleProposalClick={handleProposalClick}
+          />
 
           <AssignAdminModal />
         </div>
@@ -389,7 +398,10 @@ export default function ControlPanel() {
                 width: "30vw",
               }}
             >
-              <PropByCatAccordion allProposals={allProposals} handleProposalClick={handleProposalClick} />
+              <PropByCatAccordion
+                allProposals={allProposals}
+                handleProposalClick={handleProposalClick}
+              />
             </div>
           </div>
         </div>
@@ -646,7 +658,7 @@ export default function ControlPanel() {
               >
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
                   Submitted by: {currentProposalOwnerInfo.firstName}{" "}
-                  {currentProposalOwnerInfo.lastName} 
+                  {currentProposalOwnerInfo.lastName}
                   <span className="text-red-600">{getOwnerInfoError}</span>
                 </p>
                 <p className="mb-3 text-xl text-gray-500 md:text-xl">
@@ -705,7 +717,12 @@ export default function ControlPanel() {
           </div>
         )}
       </div>
-      <Error500 error500={error500} setError500={setError500} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
+      <Error500
+        error500={error500}
+        setError500={setError500}
+        errorMessage={errorMessage}
+        setErrorMessage={setErrorMessage}
+      />
     </div>
   );
 }

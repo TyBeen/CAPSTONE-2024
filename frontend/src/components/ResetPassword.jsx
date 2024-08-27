@@ -2,10 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const ResetPassword = () => {
-
   const [currentColor, setCurrentColor] = useState("");
   const [fetchResponse, setFetchResponse] = useState("");
-  
+
   const navigate = useNavigate();
   async function resetPasswordFetch(e) {
     e.preventDefault();
@@ -15,20 +14,23 @@ const ResetPassword = () => {
         throw new Error("Passwords do not match!");
       }
 
-      let response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/resetPassword`, {
-        method: "POST",
-        body: JSON.stringify({
-          token: e.target.token.value,
-          newPassword: e.target.password.value,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let response = await fetch(
+        `https://capstone-2024-ppe0.onrender.com/users/resetPassword`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            token: e.target.token.value,
+            newPassword: e.target.password.value,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       let results = await response.json();
       console.log("results are", results);
       console.log("Are you happening?");
-    setCurrentColor("green");
+      setCurrentColor("green");
       setFetchResponse("Success! Password changed!");
       setTimeout(() => {
         navigate("/login");
@@ -135,11 +137,21 @@ const ResetPassword = () => {
               Reset
             </button>
           </form>
-          <div className={currentColor === 'red' ? 'border-solid border-2 border-red-500' : currentColor === 'green' ? 'border-solid border-2 border-green-500' : ''}>{fetchResponse}</div>
+          <div
+            className={
+              currentColor === "red"
+                ? "border-solid border-2 border-red-500"
+                : currentColor === "green"
+                ? "border-solid border-2 border-green-500"
+                : ""
+            }
+          >
+            {fetchResponse}
+          </div>
         </div>
       </div>
     </>
-  )
+  );
 };
 
 export default ResetPassword;

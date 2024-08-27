@@ -1,23 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Modal, Button } from "flowbite-react";
 
-export default function AllProposalsModal({ handleProposalClick }) {
-  const [allProposals, setAllProposals] = useState([]);
+export default function AllProposalsModal({
+  allProposals,
+  handleProposalClick,
+}) {
   const [viewProposals, setViewProposals] = useState(false);
-
-  useEffect(() => {
-    getAllProposals(); //stays on top of changing proposals list
-  }, []);
-
-  async function getAllProposals() {
-    const response = await fetch(
-      `https://capstone-2024-ppe0.onrender.com/proposals/displayAllProposal`
-    );
-
-    const data = await response.json();
-    setAllProposals(data);
-  }
 
   return (
     <>
