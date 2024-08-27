@@ -3,7 +3,10 @@
 import { useState, useEffect } from "react";
 import { Accordion } from "flowbite-react";
 
-export default function PropByCatAccordion({ allProposals, handleProposalClick }) {
+export default function PropByCatAccordion({
+  allProposals,
+  handleProposalClick,
+}) {
   const [softDevProposals, setSoftDevProposals] = useState([]);
   const [digMarkProposals, setDigMarkroposals] = useState([]);
   const [datAnProposals, setDatAnProposals] = useState([]);
@@ -66,15 +69,14 @@ export default function PropByCatAccordion({ allProposals, handleProposalClick }
                   }}
                   className={`w-full px-4 py-2 border-b border-gray-200 rounded-t-lg ${
                     proposal.status === "submitted"
-                    ? `bg-yellow-300`
-                    : proposal.status === "approved"
-                    ? `bg-green-300`
-                    : proposal.status === "denied"
-                    ? `bg-red-300`
-                    : `bg-white`
+                      ? `bg-yellow-300`
+                      : proposal.status === "approved"
+                      ? `bg-green-300`
+                      : proposal.status === "denied"
+                      ? `bg-red-300`
+                      : `bg-white`
                   }`}
                 >
-
                   <a href="#">{proposal.companyName}</a>{" "}
                   <span>
                     <i>{proposal.status}</i>
@@ -100,12 +102,12 @@ export default function PropByCatAccordion({ allProposals, handleProposalClick }
                   }}
                   className={`w-full px-4 py-2 border-b border-gray-200 rounded-t-lg ${
                     proposal.status === "submitted"
-                    ? `bg-yellow-300`
-                    : proposal.status === "approved"
-                    ? `bg-green-300`
-                    : proposal.status === "denied"
-                    ? `bg-red-300`
-                    : `bg-white`
+                      ? `bg-yellow-300`
+                      : proposal.status === "approved"
+                      ? `bg-green-300`
+                      : proposal.status === "denied"
+                      ? `bg-red-300`
+                      : `bg-white`
                   }`}
                 >
                   <a href="#">{proposal.companyName}</a>{" "}
@@ -133,12 +135,12 @@ export default function PropByCatAccordion({ allProposals, handleProposalClick }
                   }}
                   className={`w-full px-4 py-2 border-b border-gray-200 rounded-t-lg ${
                     proposal.status === "submitted"
-                    ? `bg-yellow-300`
-                    : proposal.status === "approved"
-                    ? `bg-green-300`
-                    : proposal.status === "denied"
-                    ? `bg-red-300`
-                    : `bg-white`
+                      ? `bg-yellow-300`
+                      : proposal.status === "approved"
+                      ? `bg-green-300`
+                      : proposal.status === "denied"
+                      ? `bg-red-300`
+                      : `bg-white`
                   }`}
                 >
                   <a href="#">{proposal.companyName}</a>{" "}
@@ -166,12 +168,12 @@ export default function PropByCatAccordion({ allProposals, handleProposalClick }
                   }}
                   className={`w-full px-4 py-2 border-b border-gray-200 rounded-t-lg ${
                     proposal.status === "submitted"
-                    ? `bg-yellow-300`
-                    : proposal.status === "approved"
-                    ? `bg-green-300`
-                    : proposal.status === "denied"
-                    ? `bg-red-300`
-                    : `bg-white`
+                      ? `bg-yellow-300`
+                      : proposal.status === "approved"
+                      ? `bg-green-300`
+                      : proposal.status === "denied"
+                      ? `bg-red-300`
+                      : `bg-white`
                   }`}
                 >
                   <a href="#">{proposal.companyName}</a>{" "}
@@ -199,12 +201,12 @@ export default function PropByCatAccordion({ allProposals, handleProposalClick }
                   }}
                   className={`w-full px-4 py-2 border-b border-gray-200 rounded-t-lg ${
                     proposal.status === "submitted"
-                    ? `bg-yellow-300`
-                    : proposal.status === "approved"
-                    ? `bg-green-300`
-                    : proposal.status === "denied"
-                    ? `bg-red-300`
-                    : `bg-white`
+                      ? `bg-yellow-300`
+                      : proposal.status === "approved"
+                      ? `bg-green-300`
+                      : proposal.status === "denied"
+                      ? `bg-red-300`
+                      : `bg-white`
                   }`}
                 >
                   <a href="#">{proposal.companyName}</a>{" "}

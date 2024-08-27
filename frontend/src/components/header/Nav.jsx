@@ -27,7 +27,9 @@ export default function Nav() {
 
   //saves user info if they are logged in
   async function setPersistingCurrentUserObject(decoded) {
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`);
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/${decoded._id}`
+    );
 
     const data = await response.json();
 
@@ -57,11 +59,13 @@ export default function Nav() {
           style={{
             display: "inline-flex",
             justifyContent: "right",
-            width: "9vw"
+            width: "9vw",
           }}
         >
           <img
-          onClick={()=>{navigate("/")}}
+            onClick={() => {
+              navigate("/");
+            }}
             width="100px"
             height="100px"
             src="https://cdn.prod.website-files.com/64921323294d7b037da1a52c/649b14c49b4e1c2fd060f3f2_Upright-logo.svg"
@@ -72,6 +76,7 @@ export default function Nav() {
           style={{
             display: "flex",
             justifyContent: "right",
+            alignItems: "center",
             flexDirection: "row",
             columnGap: "15px",
             marginRight: "5px",
@@ -90,12 +95,13 @@ export default function Nav() {
             className="focus:outline-none hover:bg-transparent focus:ring-4 focus:ring-transparent"
           ></Button>
           <Button
+            size="sm"
             type="click"
             onClick={() => navigate("/")}
             style={{
               display: "inline-flex",
               backgroundColor: "#ff532f",
-              color: "white"
+              color: "white",
             }}
             className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
           >
@@ -104,12 +110,13 @@ export default function Nav() {
 
           {isAdmin && (
             <Button
+              size="sm"
               type="click"
               onClick={() => navigate("/controlpanel")}
               style={{
                 display: "inline-flex",
                 backgroundColor: "#ff532f",
-                color: "white"
+                color: "white",
               }}
               className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
             >
@@ -118,12 +125,13 @@ export default function Nav() {
           )}
 
           <Button
+            size="sm"
             type="click"
             onClick={() => navigate("/about")}
             style={{
               display: "inline-flex",
               backgroundColor: "#ff532f",
-              color: "white"
+              color: "white",
             }}
             className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
           >
@@ -133,12 +141,13 @@ export default function Nav() {
           {!isLoggedIn && (
             <>
               <Button
+                size="sm"
                 type="click"
                 onClick={() => navigate("/register")}
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "white"
+                  color: "white",
                 }}
                 className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
               >
@@ -146,12 +155,13 @@ export default function Nav() {
               </Button>
 
               <Button
+                size="sm"
                 type="click"
                 onClick={() => navigate("/login")}
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "white"
+                  color: "white",
                 }}
                 className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
               >
@@ -163,12 +173,13 @@ export default function Nav() {
           {isLoggedIn && (
             <>
               <Button
+                size="sm"
                 type="click"
                 onClick={() => navigate("/dashboard")}
                 style={{
                   display: "inline-flex",
                   backgroundColor: "#ff532f",
-                  color: "white"
+                  color: "white",
                 }}
                 className="focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
               >

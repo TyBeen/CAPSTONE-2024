@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "flowbite-react";
 import Nav from "../header/Nav";
-import AmandaPhoto from "../../assets/Amanda_bio_photo.jpg"
-import TyPhoto from "../../assets/IMG_4353.jpg"
-import MorriganPhoto from "../../assets/Screenshot_20240810-1751412.png"
+import AmandaPhoto from "../../assets/Amanda_bio_photo.jpg";
+import TyPhoto from "../../assets/IMG_4353.jpg";
+import MorriganPhoto from "../../assets/Screenshot_20240810-1751412.png";
 
 export default function About() {
   const navigate = useNavigate();
@@ -16,7 +16,8 @@ export default function About() {
           style={{
             width: "95vw",
             height: "50vh",
-            fontSize: "50px",
+            fontSize: "3em",
+            justifyContent: "center",
             textAlign: "center",
             marginLeft: "1vw",
             marginTop: "5vh",
@@ -30,124 +31,162 @@ export default function About() {
               display: "inline-flex",
               flexDirection: "row",
               backgroundColor: "#1a9988",
-              fontSize: "15px",
+              fontSize: "1rem",
             }}
           >
             <div
               style={{
+                display: "inline-flex",
+                flexDirection: "column",
                 marginRight: "10px",
                 justifyContent: "center",
+                alignItems: "center",
                 alignContent: "center",
-                border: "0px",
-                padding: "20px"
+                padding: "20px",
               }}
             >
               <div
                 style={{
-                  marginLeft: "6vw",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  padding: "20px",
-                  maxWidth: "60%",
-                  marginBottom: "3%"
+                  display: "flex",
+                  width: "20vw",
+                  height: "60vh",
                 }}
               >
                 <img src={AmandaPhoto}></img>
               </div>
               <p
-              style={{
-              marginBottom: "4%"}}>
-                <b>Amanda Brennon</b>
-              </p>
-              <p
-              style={{
-                marginTop: "2%"
-              }}>
-              Amanda decided to make a change after a career break at 35 for the birth of her son. With extensive work experience in early childhood ed, world arts & linguistics, volleyball coaching, and transcription, Amanda was ready to level up and work as a software developer. She loves puzzles and has strong organizational skills (just don’t look at the house right now). She enjoys MERN full stack development and has two custom websites to build for friends once she finishes the bootcamp! Amanda plans to be a remote software engineer while homeschooling her son and dividing time between family in the USA and Tanzania.
-              </p>
-              <div
-              style={{
-                marginTop: "5%",
-                fontWeight: "bold"
-              }}>
-                <a href="https://www.linkedin.com/in/amanda-jeanne-710a04276/" target="_blank">LinkedIn</a>
-              </div>
-                
-            </div>
-            <div
-              style={{
-                marginRight: "10px",
-                justifyContent: "center",
-                alignContent: "center",
-                border: "0px",
-                padding: "20px",
-              }}
-            >
-              <div
                 style={{
-                  marginLeft: "45px",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  padding: "20px",
+                  marginBottom: "4%",
+                  fontSize: "1.5em",
                 }}
               >
-                <div
-                  style={{
-                    marginLeft: "4vw",
-                    justifyContent: "center",
-                    alignContent: "center",
-                    padding: "20px",
-                    maxWidth: "60%"
-                  }}
-                >
-                  <img src={TyPhoto}></img>
-                </div>
-              </div>
-              <p>
-                <b>Ty Benedict</b>
+                <b>Amanda Brennan</b>
               </p>
               <p
-              style={{
-                marginTop: "5%"
-              }}>
-                Ty has always loved computers since he was a kid because his dad is a software engineer. He has always wanted to know how computers worked. He has learned to build computers from scratch and wanted to expand his knowledge to how the programs that the computers he builds run. In doing so he found what javascript was and started to learn from youtube and other various online resources. Eventually he hopes to become a software engineer just like his father. He implented some of his knowledge into this web application is proud of how it turned out!
+                style={{
+                  marginTop: "2%",
+                  textAlign: "justify",
+                }}
+              >
+                Amanda decided to make a change after a career break at 35 for
+                the birth of her son. With extensive work experience in early
+                childhood ed, world arts & linguistics, volleyball coaching, and
+                transcription, Amanda was ready to level up and work as a
+                software developer. She loves puzzles and has strong
+                organizational skills (just don&apos;t look at the house right
+                now). She enjoys MERN full stack development and has two custom
+                websites to build for friends once she finishes the bootcamp!
+                Amanda plans to be a remote software engineer while
+                homeschooling her son and dividing time between family in the
+                USA and Tanzania.
               </p>
-              <div
-              style={{
-                marginTop: "5%",
-                fontWeight: "bold",
-                marginBottom: "5%"
-              }}>
-                <a href="https://www.linkedin.com/in/ty-benedict-0320412a5/" target="_blank">LinkedIn</a>
-              </div>
-            </div>
-            <div
-              style={{
-                justifyContent: "center",
-                alignContent: "center",
-                border: "0px",
-                padding: "20px",
-              }}
-            >
               <div
                 style={{
                   marginTop: "5%",
-                  marginLeft: "9vw",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  padding: "20px",  
-                  maxWidth: "43%",
-                  marginBottom: "2%"
+                  fontWeight: "bold",
+                }}
+              >
+                <Button
+                  size="sm"
+                  color="black"
+                  href="https://www.linkedin.com/in/amanda-jeanne-710a04276"
+                  target="_blank"
+                >
+                  LinkedIn
+                </Button>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "inline-flex",
+                flexDirection: "column",
+                marginRight: "10px",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+                padding: "20px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  width: "20vw",
+                  height: "60vh",
+                }}
+              >
+                <img src={TyPhoto}></img>
+              </div>
+              <p
+                style={{
+                  marginBottom: "4%",
+                  fontSize: "1.5em",
+                }}
+              >
+                <b>Ty Benedict</b>
+              </p>
+              <p
+                style={{
+                  marginTop: "5%",
+                  textAlign: "justify",
+                }}
+              >
+                Ty has always loved computers since he was a kid because his dad
+                is a software engineer. He has always wanted to know how
+                computers worked. He has learned to build computers from scratch
+                and wanted to expand his knowledge to how the programs that the
+                computers he builds run. In doing so he found what javascript
+                was and started to learn from youtube and other various online
+                resources. Eventually he hopes to become a software engineer
+                just like his father. He implented some of his knowledge into
+                this web application is proud of how it turned out!
+              </p>
+              <div
+                style={{
+                  marginTop: "5%",
+                  fontWeight: "bold",
+                }}
+              >
+                <Button
+                  size="sm"
+                  href="https://www.linkedin.com/in/ty-benedict-0320412a5/"
+                  target="_blank"
+                  color="black"
+                >
+                  LinkedIn
+                </Button>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "inline-flex",
+                flexDirection: "column",
+                marginRight: "10px",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+                padding: "20px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  width: "20vw",
+                  height: "60vh",
                 }}
               >
                 <img src={MorriganPhoto}></img>
               </div>
               <p
-              style={{marginBottom: "3%"}}>
+                style={{
+                  marginBottom: "4%",
+                  fontSize: "1.5em",
+                }}
+              >
                 <b>Morrigan Roseingrave</b>
               </p>
-              <p 
-              style={{marginTop: "2%"}}>
+              <p style={{ marginTop: "2%", textAlign: "justify" }}>
                 Morrigan is currently making the career transition from customer
                 service to a software developer! Having worked in a bakery, a
                 deli, forged from the kitchens of the Vermont College of Fine
@@ -162,14 +201,20 @@ export default function About() {
                 videos and writing fantasy.
               </p>
               <div
-              style={{
-                marginTop: "5%",
-                fontWeight: "bold",
-                marginBottom: "5%"
-              }}>
-                <a href="https://linkedin.com/in/morrigan-roseingrave-42407b324/" target="_blank">LinkedIn</a>
+                style={{
+                  marginTop: "5%",
+                  fontWeight: "bold",
+                }}
+              >
+                <Button
+                  size="sm"
+                  href="https://linkedin.com/in/morrigan-roseingrave-42407b324"
+                  target="_blank"
+                  color="black"
+                >
+                  LinkedIn
+                </Button>
               </div>
-                
             </div>
           </div>
           <div

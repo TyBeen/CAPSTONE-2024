@@ -44,14 +44,17 @@ export default function NewUserForm() {
       state: usState,
     };
 
-    const response = await fetch(`https://capstone-2024-ppe0.onrender.com/users/register`, {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: yourJwtToken,
-      },
-    });
+    const response = await fetch(
+      `https://capstone-2024-ppe0.onrender.com/users/register`,
+      {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: yourJwtToken,
+        },
+      }
+    );
 
     const data = await response.json();
     console.log(data);
