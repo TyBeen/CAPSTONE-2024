@@ -200,7 +200,7 @@ export default function Categories() {
               </div>
               <button
                 type="click"
-                onClick={() => navigateCat("/digitalMarketing")}
+                
               >
                 Digital Marketing
               </button>
@@ -270,7 +270,7 @@ export default function Categories() {
               >
                 • Interface Design
               </div>
-              <button type="click" onClick={() => navigateCat("/UiUxDesign")}>
+              <button type="click">
                 UI/UX Design
               </button>
             </div>
@@ -340,8 +340,7 @@ export default function Categories() {
                 • Statistical Analysis
               </div>
               <button
-                type="click"
-                onClick={() => navigateCat("/DataAnalytics")}
+                type="click"}
               >
                 Data Analytics
               </button>
